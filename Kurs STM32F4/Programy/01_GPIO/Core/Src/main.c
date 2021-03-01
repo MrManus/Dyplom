@@ -49,10 +49,38 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin));
+//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	static uint8_t state = 1;
+	if (GPIO_Pin == Button_Pin) {
+
+		if (state == 1) {
+			HAL_GPIO_TogglePin(LED_Blue_GPIO_Port, LED_Blue_Pin);
+		} else if (state == 2) {
+			HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+		} else if (state == 3) {
+			HAL_GPIO_TogglePin(LED_Orange_GPIO_Port, LED_Orange_Pin);
+		} else if (state == 4) {
+			HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin);
+		}
+
+		++state;
+		if (state == 5) {
+			state = 1;
+		}
+
+	}
 }
+//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+//{
+//	if(GPIO_Pin == Button_Pin)
+//	{
+//		HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin));
+//		HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin));
+//		HAL_GPIO_WritePin(LED_Orange_GPIO_Port, LED_Orange_Pin, HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin));
+//		HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin));
+//	}
+//}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -99,6 +127,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
 //	  if(HAL_GPIO_ReadPin(Button_GPIO_Port, Button_Pin) == GPIO_PIN_SET)
 //	  {
 //		  HAL_GPIO_WritePin(LED_Blue_GPIO_Port, LED_Blue_Pin, GPIO_PIN_SET);
@@ -192,7 +221,28 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+//{
+//	static uint8_t state = 1;
+//		if (GPIO_Pin == Button_Pin) {
+//
+//			if (state == 1) {
+//				HAL_GPIO_TogglePin(LED_Blue_GPIO_Port, LED_Blue_Pin);
+//			} else if (state == 2) {
+//				HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+//			} else if (state == 3) {
+//				HAL_GPIO_TogglePin(LED_Orange_GPIO_Port, LED_Orange_Pin);
+//			} else if (state == 4) {
+//				HAL_GPIO_TogglePin(LED_Red_GPIO_Port, LED_Red_Pin);
+//			}
+//
+//			++state;
+//			if (state == 5) {
+//				state = 1;
+//			}
+//
+//		}
+//}
 /* USER CODE END 4 */
 
 /**
