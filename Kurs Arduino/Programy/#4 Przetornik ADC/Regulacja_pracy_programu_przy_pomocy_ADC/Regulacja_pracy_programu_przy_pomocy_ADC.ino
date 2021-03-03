@@ -35,7 +35,7 @@ void loop() {
     digitalWrite(12,LOW);
   }
  
-  if(odczytanaWartosc == 4){  //Czwartyzakres
+  if(odczytanaWartosc == 4){  //Czwarty zakres
     digitalWrite(8,LOW);
     digitalWrite(9,LOW);
     digitalWrite(10,LOW);
