@@ -24,7 +24,7 @@ void loop() {
 //    nowaPozycja = odebranaPozycja.toInt(); //konwersja odebranej pozycji na typ int
 //  }
 
-  if(nowaPozycja != pozycja){ //Sprawdzenie czy należy wykonać ruch
+  if(abs(nowaPozycja - pozycja) > 5){ //Sprawdzenie czy należy wykonać ruch, ruch tylko gdy należy dokonać zmiany o wiecej niż 5 stopni 
       pozycja = nowaPozycja; //Pzypisanie nowej pozycji 
       if(pozycja <= 180){  //Sprawdzenie czy pozycja nie ejst za duża
         Serial.print("Wybrana pozycja to: "); //Wyswietlenie komunikatów
