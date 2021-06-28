@@ -1,0 +1,69 @@
+%% Generacja sygna³ów zdeterminowanych
+% Generacja sygna³ów monoharminicznego, poliharmonicznego,
+% prawieokresowego i przejœciowego oraz ich analiza widmowa
+%
+% Autor: Piotr Burnos
+% Data: 20.02.2018
+
+%%
+clear all; 
+close all;
+clc
+
+%% Sygna³y zdeterminowane
+% Generacja sygna³ów zdeterminowanych: mono i poli-harmonicznego, prawie
+% okresowego i przejœciowego.
+
+% parametry próbkowania
+
+fpr= 1000; dt= 1/fp;         % czêstotliwoœæ próbkowania (dobrana tak by by³o spe³nione twierdzenie o próbkowaniu)
+t0= .5;                 % czas obserwacji sygna³ów
+N= t0/dt;                 % liczba próbek
+t= (0:N-1) * dt;                 % wektor czasu
+
+df=fpr/N; f=df*(0:N-1);     %wektor czêstotliwoœci (potrzebny przy analizie fft)
+
+%% parametry sygna³ów
+%
+A1=1; f1=50; fi1=0;         % amplituda, czêstotliwoœæ, przesuniêcie fazowe
+A2=0.5; f2=125; fi2=pi/2;
+A3=0.3; f3=200; fi3=0;      
+A4=1; f4n=sqrt(6013.543); fi4=0;   %f4 - niewymierna
+
+%% generowanie sygna³u monoharmonicznego
+%
+y1= ........ ;
+Y1= ........ ;      % transformata Fourieria
+
+figure(1);
+subplot(421); plot(t,y1); grid on; xlabel('Czas [s]');ylabel('Amplituda');title(['Sygna³ monoharmoniczny o f=' num2str(f1) 'Hz']);
+subplot(422); stem(f(1,(1:N/2)),Y1(1,(1:N/2)));xlabel('Czestotliwoœæ [Hz]'); ylabel('Amplituda'); grid on;
+
+% %% generowanie sygna³u poliharmonicznego (trzy harmoniczne f1, f2 i f3)
+% %
+% y2= ........ ;
+% Y2= ........ ;
+% 
+% subplot(423); plot(t,y2); grid on;xlabel('Czas [s]');ylabel('Amplituda');title(['Sygna³ poliharmoniczny o f1=' num2str(f1) 'Hz, ' 'f2=' num2str(f2) 'Hz, ' 'f3=' num2str(f3) 'Hz']);
+% subplot(424); stem(f(1,(1:N/2)),Y2(1,(1:N/2)));xlabel('Czestotliwoœæ [Hz]'); ylabel('Amplituda'); grid on;
+% 
+% %% generowanie sygna³u prawie okresowego (dwie harmoniczne f1 i f4n)
+% %
+% y3= ........ ;
+% Y3= ........ ;
+% 
+% subplot(425); plot(t,y3); grid on;xlabel('Czas [s]');ylabel('Amplituda');title(['Sygna³ prawieokresowy o f1=' num2str(f1) 'Hz, ' 'f2=' num2str(f4n) 'Hz']);
+% subplot(426); stem(f(1,(1:N/2)),Y3(1,(1:N/2)));xlabel('Czestotliwoœæ [Hz]'); ylabel('Amplituda'); grid on;
+% 
+% %% generowanie sygna³u przejœciowego (przez modulacjê amplitudy sygna³u y1)
+% %
+% y4= ........ ;
+% Y4= ........ ;
+% 
+% subplot(427); plot(t,y4); grid on;xlabel('Czas [s]');ylabel('Amplituda');title(['Sygna³ przejœciowy o f1=' num2str(f1) 'Hz, ' 'modulowany amplitudowo']);
+% subplot(428); stem(f(1,(1:N/2)),Y4(1,(1:N/2)));xlabel('Czestotliwoœæ [Hz]'); ylabel('Amplituda'); grid on;
+% 
+% 
+% 
+
+

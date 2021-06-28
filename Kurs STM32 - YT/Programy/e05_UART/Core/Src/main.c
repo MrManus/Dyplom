@@ -173,14 +173,14 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 		if(znak == 'e')
 		{
 			HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
-			dl_kom = sprintf(komunikat, "DIODA ON\n");
-//			dl_kom = 8;
+			dl_kom = sprintf(komunikat, "DIODA ON\n\r");
+//			dl_kom = 10;
 		}
 		else if(znak == 'd')
 		{
-			HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
-			dl_kom =sprintf(komunikat, "DIODA OFF");
-//			dl_kom = 9;
+			HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
+			dl_kom =sprintf(komunikat, "DIODA OFF\n\r");
+//			dl_kom = 11;
 		}
 		else
 		{
