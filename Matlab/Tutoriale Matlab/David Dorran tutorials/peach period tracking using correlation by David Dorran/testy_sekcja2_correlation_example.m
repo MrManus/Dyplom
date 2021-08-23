@@ -23,7 +23,7 @@ xlabel('Time (seconds)')
 title('Synthesised Signal');
  
 %% Determine the autocorrelation function
-[rxx lags] = xcorr(x,x);
+[rxx, lags] = xcorr(x,x);
 figure
 plot(lags, rxx)
 xlabel('Lag')
@@ -51,7 +51,7 @@ plot(lags,rxx,'rx');
 hold on
 plot(lags,seq)
 
-[max_val second_peak_loc] = max(seq);
+[max_val, second_peak_loc] = max(seq);
 period_in_samples =  abs(second_peak_loc -first_peak_loc)
 period = period_in_samples*T
 fundamental_frequency = 1/period
