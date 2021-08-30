@@ -11,24 +11,34 @@ clc
 clear all 
 close all 
  
-[ip, fs] = audioread('speech_demo.wav');
-% [ip, fs] = audioread('Gitara_Dyplom-E4.wav');
-% [ip, fs] = audioread('skrocony_E2.wav');
+% [ip, fs] = audioread('speech_demo.wav');
+%  [ip, fs] = audioread('E4_3sek_mono.wav');
+[ip, fs] = audioread('E2_mono176kHz.wav');
+
+%sekcja do testów resampling
+%  [ipold, fsold] = audioread('E4_3sek_mono.wav');
+% ip = resample(ipold,20,2);
+% fs = 10*fsold;
+% % 
+% [ipold, fsold] = audioread('E2_mono176kHz.wav');
+% ip = resample(ipold,20,2);
+% fs = 10*fsold;
+
 max_expected_period = round(1/50*fs);
-min_expected_period = round(1/200*fs);
+min_expected_period = round(1/400*fs);
 frame_len = 2*max_expected_period;
  
-for k = 1 : length(ip)/frame_len -1
-    range = (k-1)*frame_len + 1:k*frame_len;
-    frame = ip(range);
+for k = 1 : length(ip)/frame_len -1  %wykonujemy tyle razy ile razy ramka mieœcie sie w sygnale
+    range = (k-1)*frame_len + 1:k*frame_len; %zasiêg próbek od próbki = (k-1) razu d³ugoœæ ramki plus jedna próbka koniec ramki dal k krotnoœci d³ugosci ramki 
+    frame = ip(range); % stworzenie kopi fragmentu sygna³u którego zakres okreslony jest zmienna range
      
     %show the input in blue and the selected frame in red
     plot(ip);
     set(gca, 'xtick',[],'position',[ 0.05  0.82   0.91  0.13])
     hold on;
     temp_sig = ones(size(ip))*NaN;
-    temp_sig(range) = frame;
-    plot(temp_sig,'g');
+    temp_sig(range) = frame; %stworzenie macierzy temp_sig która wszedzie poza akurat badanym zakresem próbek zawiera NaN
+    plot(temp_sig,'r'); %wyrysowania wszystkich wartoœci z temp_sig które nie s¹ NaN
     hold off
      
     %use xcorr to determine the local period of the frame
@@ -39,13 +49,13 @@ for k = 1 : length(ip)/frame_len -1
     center_peak_width = find(rxx(frame_len:end) == 0 ,1); %find first zero after center
     %center of rxx is located at length(frame)+1
     rxx(frame_len-center_peak_width : frame_len+center_peak_width  ) = min(rxx);
-%     hold on
-%     plot(lag, rxx,'g');
-%     hold off
+    hold on
+    plot(lag, rxx,'g');
+    hold off
     [max_val, loc] = max(rxx);
     period = abs(loc - length(frame)+1); 
      
-    title(['Period estimate = ' num2str(period) 'samples (' num2str(fs/period) 'Hz)']);
+    title(['Period estimate = ' num2str(period) ' samples (' num2str(fs/period) 'Hz)']);
     set(gca, 'position', [ 0.05  0.07    0.91  0.25])
      
     [max_val, max_loc] = max(frame);
