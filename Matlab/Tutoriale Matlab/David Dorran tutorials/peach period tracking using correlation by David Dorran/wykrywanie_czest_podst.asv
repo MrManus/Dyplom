@@ -1,0 +1,27 @@
+close all
+clear all
+clc
+
+f1 = 44000;
+f2 = 329;
+
+sig = gen_zaszum_sin(f1, f2); %wygeneruj sygna³ o czêstotliwosci podstawowej 329Hz próbkowany z czêstotliwosci¹ 44kHz
+temp_sig = sig; %stwórz kopie sygnalu na której dokonywane bêd¹ obliczenia
+
+[sig_cor, lag] = xcorr(temp_sig,temp_sig); %wykonaj korelacjê sygna³u 
+
+plot(lag, sig_cor,'r')
+sig_cor(find(sig_cor < 0)) = 0; %ustaw wszystkie ujemne wartoœci korelacji jako zero
+
+sig_len = length(temp_sig);%ustal d³ugoœæ ca³ego sygna³u 
+%korelacja sygna³u bêdzie dwa razy d³u¿sza ni¿ sygna³ a œrodek korelacji
+%czyli d³ugoœæ sygna³u o
+
+center_peak_width = find(sig_cor(sig_len:end) == 0, 1); %
+sig_cor(sig_len - center_peak_width : sig_len + center_peak_width) = min(sig_cor);
+
+hold on
+plot(lag, sig_cor, 'g');
+
+
+

@@ -32,7 +32,7 @@ title('Auto-correlation Function')
  
 %% Illustrate the auto correlation process
 %function available from https://dadorran.wordpress.com
-% illustrate_xcorr(x,x) 
+illustrate_xcorr(x,x) 
 
 %% Identify most prominent peaks
 % Most prominent peak will be at the center of the correlation function

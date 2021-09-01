@@ -12,8 +12,8 @@ clear all
 close all 
  
 % [ip, fs] = audioread('speech_demo.wav');
-%  [ip, fs] = audioread('E4_3sek_mono.wav');
-[ip, fs] = audioread('E2_mono176kHz.wav');
+[ip, fs] = audioread('E4_mono176kHz.wav');
+% [ip, fs] = audioread('E2_mono176kHz.wav');
 
 %sekcja do testów resampling
 %  [ipold, fsold] = audioread('E4_3sek_mono.wav');
@@ -26,7 +26,7 @@ close all
 
 max_expected_period = round(1/50*fs);
 min_expected_period = round(1/400*fs);
-frame_len = 2*max_expected_period;
+frame_len = 4*max_expected_period;
  
 for k = 1 : length(ip)/frame_len -1  %wykonujemy tyle razy ile razy ramka mieœcie sie w sygnale
     range = (k-1)*frame_len + 1:k*frame_len; %zasiêg próbek od próbki = (k-1) razu d³ugoœæ ramki plus jedna próbka koniec ramki dal k krotnoœci d³ugosci ramki 
