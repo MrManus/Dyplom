@@ -26,7 +26,8 @@ N = 10000;
 t = [0:N-1]*T;
 % f1 = 329;
 f1 = f_sin;
-f2 = f1*2;
+% f2 = f1*2;
+f2 = 500;
 
 text1 = ['Czêstotliwoœæ próbkowania to: ', num2str(fs),'Hz'];
 text2 = ['Czêstotliwoœæ podstawowa sinusa to: ', num2str(f1),'Hz'];
@@ -34,13 +35,13 @@ disp(text1);
 disp(text2);
 
 syg1 = 0.1*sin(2*pi*f1*t);
-syg2 = 0.1*sin(2*pi*f2*t);
+syg2 = 0.03*sin(2*pi*f2*t);
 
 czysty_sin = syg1 + syg2 ;
 
 
 
-sigma = 0.1;
+sigma = 0;
 szum = sigma*randn(1,N);
 % szum = 0;
 zaszumiony = czysty_sin + szum;
