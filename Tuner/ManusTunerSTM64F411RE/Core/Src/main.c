@@ -27,7 +27,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdbool.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -38,7 +39,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 //#define SINGLE_CONV_SAMPLES	14112u
-#define SINGLE_CONV_SAMPLES	1000u
+#define SINGLE_CONV_SAMPLES	1000u //TODO: Update to correct number of samples
 #define DMA_ADC_BUFFER_LEN	(SINGLE_CONV_SAMPLES * 2u)
 /* USER CODE END PD */
 
@@ -50,14 +51,17 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+volatile bool samples_update_lock = false;
+volatile uint16_t tick_1ms = 0u;
 uint16_t dma_adc_buff[DMA_ADC_BUFFER_LEN];
+uint16_t locked_samples_buff[SINGLE_CONV_SAMPLES];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
-
+void adc_data_processing_task(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -176,17 +180,74 @@ static void MX_NVIC_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
+	/* DBG Start */
 	HAL_GPIO_TogglePin(TimerCheck_GPIO_Port	, TimerCheck_Pin);
+	/* DBG End */
+
+	tick_1ms++;
+	/* Tick value overflowing at 999 */
+	tick_1ms %= 1000u;
+
+	/*
+	 * Here place 1ms tasks //TODO: check if works in valid period
+	 */
+
+	if(0u == tick_1ms % 10u)
+	{
+		/*
+		 * Here place 10ms tasks //TODO: check if works in valid period
+		 */
+	}
+
+	if(0u == tick_1ms % 100u)
+	{
+		/*
+		 * Here place 100ms tasks //TODO: check if works in valid period
+		 */
+
+		adc_data_processing_task();
+	}
+}
+
+void adc_data_processing_task(void)
+{
+	/* Lock the data so it wont be changed during processing */
+	samples_update_lock = true;
+
+	/*
+	 *	Here do all ADC data processing
+	 */
+
+	/* Disable the lock after processing */
+	samples_update_lock = false;
 }
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 {
+	/* DBG Start */
 	HAL_GPIO_WritePin(LOG_GPIO_Port, LOG_Pin, GPIO_PIN_SET);
+	/* DBG End */
+
+	/* Allow to modify buffer only if it not used/locked */
+	if(false == samples_update_lock)
+	{
+		 // Copy data from DMA buffer so it wont change during further processing
+		memcpy(locked_samples_buff, &dma_adc_buff[0u],  sizeof(locked_samples_buff));
+	}
 }
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
+	/* DBG Start */
 	HAL_GPIO_WritePin(LOG_GPIO_Port, LOG_Pin, GPIO_PIN_RESET);
+	/* DBG End */
+
+	/* Allow to modify buffer only if it not used/locked */
+	if(false == samples_update_lock)
+	{
+		// Copy data from DMA buffer so it wont change during further processing
+		memcpy(locked_samples_buff, &dma_adc_buff[SINGLE_CONV_SAMPLES], sizeof(locked_samples_buff));
+	}
 }
 /* USER CODE END 4 */
 
