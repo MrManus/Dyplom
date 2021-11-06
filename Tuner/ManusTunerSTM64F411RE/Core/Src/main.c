@@ -21,6 +21,7 @@
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -95,10 +96,12 @@ int main(void)
   MX_USART2_UART_Init();
   MX_DMA_Init();
   MX_ADC1_Init();
+  MX_TIM10_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim10);
   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)dma_adc_buff, DMA_ADC_BUFFER_LEN);
   /* USER CODE END 2 */
 
@@ -165,9 +168,17 @@ static void MX_NVIC_Init(void)
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+  /* TIM1_UP_TIM10_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(TIM1_UP_TIM10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	HAL_GPIO_TogglePin(TimerCheck_GPIO_Port	, TimerCheck_Pin);
+}
+
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 {
 	HAL_GPIO_WritePin(LOG_GPIO_Port, LOG_Pin, GPIO_PIN_SET);
