@@ -21,6 +21,7 @@
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
+#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -29,11 +30,39 @@
 /* USER CODE BEGIN Includes */
 #include <stdbool.h>
 #include <string.h>
+#include "frequency_calculator.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+typedef union
+{
+	struct
+	{
+		uint8_t		val:	8;
+		uint8_t 	addr:	4;
+		uint8_t		dummy:  4;
+	}__attribute__((packed));
+	uint16_t raw;
+}display_frm_u;
 
+typedef enum
+{
+	NO_OP = 0x00u,
+	DIGIT_0 = 0x01u,
+	DIGIT_1 = 0x02u,
+	DIGIT_2 = 0x03u,
+	DIGIT_3 = 0x04u,
+	DIGIT_4 = 0x05u,
+	DIGIT_5 = 0x06u,
+	DIGIT_6 = 0x07u,
+	DIGIT_7 = 0x08u,
+	DECODE_MODE = 0x09u,
+	INTESITY = 0x0Au,
+	SCAN_LINIT = 0x0Bu,
+	SHUTDOWN = 0x0Cu,
+	DISPLAY_TEST = 0x0Fu
+}display_cmd_e;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -55,13 +84,17 @@ volatile bool samples_update_lock = false;
 volatile uint16_t tick_1ms = 0u;
 uint16_t dma_adc_buff[DMA_ADC_BUFFER_LEN];
 uint16_t locked_samples_buff[SINGLE_CONV_SAMPLES];
+display_frm_u disp_frm_buf;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
+void display_task(void);
 void adc_data_processing_task(void);
+void disp_send_cmd(display_cmd_e cmd, uint8_t val);
+void disp_init(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -101,12 +134,14 @@ int main(void)
   MX_DMA_Init();
   MX_ADC1_Init();
   MX_TIM10_Init();
+  MX_SPI2_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim10);
   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)dma_adc_buff, DMA_ADC_BUFFER_LEN);
+  disp_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -175,6 +210,9 @@ static void MX_NVIC_Init(void)
   /* TIM1_UP_TIM10_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(TIM1_UP_TIM10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
+  /* SPI2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(SPI2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(SPI2_IRQn);
 }
 
 /* USER CODE BEGIN 4 */
@@ -206,7 +244,45 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		 */
 
 		adc_data_processing_task();
+
+		display_task();
 	}
+}
+
+void display_task(void)
+{
+//	  disp_send_cmd(DIGIT_3, 0x0F);
+}
+
+void disp_init()
+{
+  HAL_GPIO_WritePin(DISP_CS_GPIO_Port, DISP_CS_Pin, GPIO_PIN_SET);
+
+  HAL_Delay(1);
+  /* Normal Operation mode*/
+  disp_send_cmd(SHUTDOWN, 0x01);
+  HAL_Delay(1);
+
+  HAL_Delay(1);
+  /* Normal Operation mode*/
+  disp_send_cmd(SHUTDOWN, 0x01);
+  HAL_Delay(1);
+  /* Set Intensity */
+  disp_send_cmd(INTESITY, 0x0F);
+  HAL_Delay(1);
+  /* Set scan Limit */
+  disp_send_cmd(SCAN_LINIT, 0x07);
+  HAL_Delay(1);
+}
+
+void disp_send_cmd(display_cmd_e cmd, uint8_t val)
+{
+	disp_frm_buf.addr = cmd;
+	disp_frm_buf.val = val;
+
+	/* CS Pin LOW level*/
+	HAL_GPIO_WritePin(DISP_CS_GPIO_Port, DISP_CS_Pin, GPIO_PIN_RESET);
+	HAL_SPI_Transmit_IT(&hspi2, &disp_frm_buf, 1u);
 }
 
 void adc_data_processing_task(void)
@@ -217,6 +293,7 @@ void adc_data_processing_task(void)
 	/*
 	 *	Here do all ADC data processing
 	 */
+//	  GetCrossCorr(SignalBuffer, SignalLength, CrossCorrBuffer);
 
 	/* Disable the lock after processing */
 	samples_update_lock = false;
@@ -248,6 +325,12 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 		// Copy data from DMA buffer so it wont change during further processing
 		memcpy(locked_samples_buff, &dma_adc_buff[SINGLE_CONV_SAMPLES], sizeof(locked_samples_buff));
 	}
+}
+
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+	/* CS Pin goes to HIGH level */
+	HAL_GPIO_WritePin(DISP_CS_GPIO_Port, DISP_CS_Pin, GPIO_PIN_SET);
 }
 /* USER CODE END 4 */
 
