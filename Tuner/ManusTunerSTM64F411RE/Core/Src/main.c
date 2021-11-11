@@ -61,6 +61,9 @@ typedef union
 #define MAX7219_SHUTDOWN_REGISTER    0x0C
 #define MAX7219_DISPLAY_TEST_REGISTER 0x0F
 
+#define DISP_ROWS	8u
+#define DISP_COLS	8u
+
 typedef enum
 {
 	NoDecode 		= 0,
@@ -114,6 +117,96 @@ volatile uint16_t tick_1ms = 0u;
 uint16_t dma_adc_buff[DMA_ADC_BUFFER_LEN];
 uint16_t locked_samples_buff[SINGLE_CONV_SAMPLES];
 display_frm_u disp_frm_buf;
+uint8_t disp_pixel[DISP_ROWS] = {0b10000001,
+								 0b01000010,
+								 0b00100100,
+								 0b00011000,
+								 0b00011000,
+								 0b00100100,
+								 0b01000010,
+								 0b10000001};
+
+const uint8_t e_bitmap[DISP_ROWS] = {0b00000000,
+									 0b00000000,
+									 0b00111100,
+									 0b00100000,
+									 0b00111100,
+									 0b00100000,
+									 0b00111100,
+									 0b00000000};
+
+const uint8_t a_bitmap[DISP_ROWS] = {0b00000000,
+									 0b00000000,
+									 0b00011000,
+									 0b00100100,
+									 0b00111100,
+									 0b00100100,
+									 0b00100100,
+									 0b00000000};
+
+const uint8_t d_bitmap[DISP_ROWS] = {0b00000000,
+									 0b00000000,
+									 0b00111000,
+									 0b00100100,
+									 0b00100100,
+									 0b00100100,
+									 0b00111000,
+									 0b00000000};
+
+const uint8_t g_bitmap[DISP_ROWS] = {0b00000000,
+									 0b00000000,
+									 0b00011100,
+									 0b00100000,
+									 0b00101100,
+									 0b00100100,
+									 0b00011100,
+									 0b00000000};
+
+const uint8_t h_bitmap[DISP_ROWS] = {0b00000000,
+									 0b00000000,
+									 0b00100100,
+									 0b00100100,
+									 0b00111100,
+									 0b00100100,
+									 0b00100100,
+									 0b00000000};
+
+const uint8_t c_bitmap[DISP_ROWS] = {0b00000000,
+									 0b00000000,
+									 0b00011100,
+									 0b00100000,
+									 0b00100000,
+									 0b00100000,
+									 0b00011100,
+									 0b00000000};
+
+const uint8_t f_bitmap[DISP_ROWS] = {0b00000000,
+									 0b00000000,
+									 0b00111100,
+									 0b00100000,
+									 0b00111100,
+									 0b00100000,
+									 0b00100000,
+									 0b00000000};
+
+const uint8_t space_bitmap[DISP_ROWS] = {	0b00000000,
+											0b00000000,
+											0b00000000,
+											0b00000000,
+											0b00000000,
+											0b00000000,
+											0b00000000,
+											0b00000000};
+
+const uint8_t question_bitmap[DISP_ROWS] = {	0b00000000,
+												0b00111000,
+												0b00000100,
+												0b00011100,
+												0b00100000,
+												0b00011000,
+												0b00000000,
+												0b00001100};
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -124,6 +217,9 @@ void display_task(void);
 void adc_data_processing_task(void);
 void disp_send_cmd(uint8_t cmd, uint8_t val);
 void disp_init(void);
+void disp_draw_bitmap_task(void);
+void disp_set_bitmap(const uint8_t* const bitmap);
+void disp_set_char(char letter);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -253,11 +349,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	tick_1ms++;
 	/* Tick value overflowing at 999 */
-	tick_1ms %= 1000u;
+	tick_1ms %= 10000u;
 
 	/*
 	 * Here place 1ms tasks //TODO: check if works in valid period
 	 */
+	display_task();
 
 	if(0u == tick_1ms % 10u)
 	{
@@ -274,14 +371,74 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 		adc_data_processing_task();
 
-		display_task();
-
 	}
+	if(0u == tick_1ms % 3000u)
+	{
+		/*
+		 * Here place 3s tasks //TODO: check if works in valid period
+		 */
+		static char letter = 'a';
+		disp_set_char(letter);
+		letter++;
+	}
+}
+
+void disp_set_char(char letter)
+{
+	const uint8_t* char_tab_ptr;
+
+	switch(letter)
+	{
+		case 'e':
+			char_tab_ptr = e_bitmap;
+			break;
+		case 'a':
+			char_tab_ptr = a_bitmap;
+			break;
+		case 'd':
+			char_tab_ptr = d_bitmap;
+			break;
+		case 'g':
+			char_tab_ptr = g_bitmap;
+			break;
+		case 'h':
+			char_tab_ptr = h_bitmap;
+			break;
+		case 'c':
+			char_tab_ptr = c_bitmap;
+			break;
+		case 'f':
+			char_tab_ptr = f_bitmap;
+			break;
+		case ' ':
+			char_tab_ptr = space_bitmap;
+			break;
+		default:
+			char_tab_ptr = question_bitmap;
+			break;
+	}
+
+	disp_set_bitmap(char_tab_ptr);
+}
+
+void disp_set_bitmap(const uint8_t* const bitmap)
+{
+	memcpy(disp_pixel, bitmap, sizeof(disp_pixel));
+}
+
+void disp_draw_bitmap_task(void)
+{
+	static uint8_t row_cnt = 0u;
+
+	disp_send_cmd(row_cnt + MAX7219_DIGIT0_REGISTER, disp_pixel[row_cnt]);
+
+	row_cnt++;
+	row_cnt %= DISP_ROWS;
 }
 
 void display_task(void)
 {
-
+	disp_draw_bitmap_task();
 }
 
 void disp_init()
