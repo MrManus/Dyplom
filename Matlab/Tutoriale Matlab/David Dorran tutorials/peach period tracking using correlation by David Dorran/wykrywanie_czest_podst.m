@@ -2,7 +2,7 @@ close all
 clear all
 clc
 
-f_prob = 176000;
+f_prob = 192000;
 f_sin = 329;
 
 sig = gen_zaszum_sin(f_prob, f_sin); %wygeneruj sygna³ o czêstotliwosci podstawowej 329Hz próbkowany z czêstotliwosci¹ 44kHz

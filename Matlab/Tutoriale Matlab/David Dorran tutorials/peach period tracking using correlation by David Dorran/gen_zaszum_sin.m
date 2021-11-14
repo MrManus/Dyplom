@@ -22,12 +22,12 @@ function zaszumiony = gen_zaszum_sin(f_prob, f_sin)
 % fs = 44000;
 fs = f_prob;
 T = 1/fs;
-N = 10000;
+N = 5000;
 t = [0:N-1]*T;
 % f1 = 329;
 f1 = f_sin;
 % f2 = f1*2;
-f2 = 500;
+f2 = 658;
 
 text1 = ['Czêstotliwoœæ próbkowania to: ', num2str(fs),'Hz'];
 text2 = ['Czêstotliwoœæ podstawowa sinusa to: ', num2str(f1),'Hz'];
@@ -35,7 +35,7 @@ disp(text1);
 disp(text2);
 
 syg1 = 0.1*sin(2*pi*f1*t);
-syg2 = 0.03*sin(2*pi*f2*t);
+syg2 = 0.05*sin(2*pi*f2*t-pi/2);
 
 czysty_sin = syg1 + syg2 ;
 

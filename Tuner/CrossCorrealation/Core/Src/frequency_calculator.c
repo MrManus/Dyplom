@@ -9,13 +9,22 @@
 #include "math.h"
 
 
-void GetCrossCorr(uint16_t *SignalBuffer, uint16_t SignalLength, float *CrossCorrBuffer)
+float GetCrossCorr(float *SignalBuffer, uint16_t SignalLength, float *CrossCorrBuffer)
 {
+
 	uint16_t LagAmount = ((2*SignalLength)-1);
 	uint16_t SamplesAmount;
-	uint16_t MiddleLag = SignalLength;
 	float Nominator = 0;
 	uint16_t StarterSample;
+
+	uint16_t MiddleLag = SignalLength;
+	uint16_t MiddlePeakHalfLength;
+	float SecHighPeakValue = 0;
+	uint16_t SecHighPeakPos;
+
+	float SamplingFrequency = SAMPLING_FREQUENCY;
+	float Period = 0;
+	float PeriodHz = 0;
 
 	for(uint16_t i = 0; i<LagAmount; i++)
 	{
@@ -45,26 +54,48 @@ void GetCrossCorr(uint16_t *SignalBuffer, uint16_t SignalLength, float *CrossCor
 			CrossCorrBuffer[i] = Nominator;
 		}
 	}
+
+	for(uint16_t LagCounter = 0; LagCounter < LagAmount; LagCounter++)
+	{
+		if(CrossCorrBuffer[LagCounter] < 0)
+		{
+			CrossCorrBuffer[LagCounter] = 0;
+		}
+	}
+
+	for(uint16_t LagCounter = MiddleLag; LagCounter < LagAmount; LagCounter++)
+	{
+		if(CrossCorrBuffer[LagCounter] == 0)
+		{
+			MiddlePeakHalfLength = (LagCounter - 1) - MiddleLag;
+			break;
+		}
+	}
+
+	for(uint16_t LagCounter = (MiddleLag - MiddlePeakHalfLength); LagCounter < (MiddleLag + MiddlePeakHalfLength); LagCounter++)
+	{
+		CrossCorrBuffer[LagCounter] = 0;
+	}
+
+	for(uint16_t LagCounter = 0; LagCounter < LagAmount; LagCounter++)
+	{
+		if(CrossCorrBuffer[LagCounter] > SecHighPeakValue)
+		{
+			SecHighPeakValue = CrossCorrBuffer[LagCounter];
+			SecHighPeakPos = LagCounter;
+		}
+	}
+
+	if(SecHighPeakPos < MiddleLag)
+	{
+		Period = MiddleLag - SecHighPeakPos;
+	}
+	else if (SecHighPeakPos > MiddleLag)
+	{
+		Period = SecHighPeakPos - MiddleLag;
+	}
+
+	return PeriodHz = SamplingFrequency / Period;
+
 }
 
-//float LeftCrossCorr(float *SignalBuffer, uint16_t SignalLength, uint16_t SamplesAmount)
-//{
-//	float CorrNorm = 0;
-//	uint16_t StarterSample = SignalLength - SamplesAmount;
-//	float Nominator = 0;
-////	float Denominator = 0;
-////	float Xsquared = 0;
-////	float Ysquared = 0;
-//
-//
-//	for(uint16_t i = 0; i < SamplesAmount; i++)
-//	{
-//		Nominator = Nominator + (SignalBuffer[i] * SignalBuffer[StarterSample + i]);
-////		Xsquared = Xsquared + (SignalBuffer[i] * SignalBuffer[i]);
-////		Ysquared = Ysquared + (SignalBuffer[StarterSample + i] * SignalBuffer[StarterSample + i]);
-//	}
-////	Denominator = sqrt(Xsquared + Ysquared);
-////	CorrNorm = (Nominator / Denominator);
-//	CorrNorm = Nominator;
-//	return CorrNorm;
-//}

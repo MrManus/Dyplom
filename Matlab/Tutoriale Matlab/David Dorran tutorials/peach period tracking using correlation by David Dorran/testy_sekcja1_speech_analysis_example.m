@@ -27,7 +27,7 @@ close all
 max_expected_period = round(1/50*fs);
 min_expected_period = round(1/400*fs);
 frame_len = 4*max_expected_period;
-pause;
+
  
 for k = 1 : length(ip)/frame_len -1  %wykonujemy tyle razy ile razy ramka mieœcie sie w sygnale
     range = (k-1)*frame_len + 1:k*frame_len; %zasiêg próbek od próbki = (k-1) razu d³ugoœæ ramki plus jedna próbka koniec ramki dal k krotnoœci d³ugosci ramki 

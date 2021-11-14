@@ -21,11 +21,11 @@ plot(t, x)
 ylabel('Amplitude')
 xlabel('Time (seconds)')
 title('Synthesised Signal');
-
-data_to_export = single(x);
-dlmwrite('sin_exported.txt',data_to_export,'delimiter',',','precision',9)
-[export_corr, export_lag] = xcorr(data_to_export,data_to_export)
-dlmwrite('corr_exported.txt',export_corr,'delimiter',',','precision',9)
+%% Zapis do pliku
+% data_to_export = single(x);
+% dlmwrite('sin_exported.txt',data_to_export,'delimiter',',','precision',9)
+% [export_corr, export_lag] = xcorr(data_to_export,data_to_export)
+% dlmwrite('corr_exported.txt',export_corr,'delimiter',',','precision',9)
 %% Determine the autocorrelation function
 [rxx, lags] = xcorr(x,x);
 figure
