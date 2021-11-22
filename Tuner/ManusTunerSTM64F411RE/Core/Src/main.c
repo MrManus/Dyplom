@@ -46,6 +46,8 @@ typedef union
 	uint16_t raw;
 }display_frm_u;
 
+#define UINT16T_MAX				0xFFFFu
+
 #define MAX7219_NOOP_REGISTER   0x00
 #define MAX7219_DIGIT0_REGISTER 0x01
 #define MAX7219_DIGIT1_REGISTER 0x02
@@ -126,7 +128,7 @@ float PeriodHz;
 volatile bool samples_update_lock = false;
 volatile uint16_t tick_1ms = 0u;
 uint16_t dma_adc_buff[DMA_ADC_BUFFER_LEN];
-uint16_t locked_samples_buff[SINGLE_CONV_SAMPLES];
+int16_t locked_samples_buff[SINGLE_CONV_SAMPLES];
 display_frm_u disp_frm_buf;
 uint8_t disp_pixel[DISP_ROWS] = {0b10000001,
 								 0b01000010,
@@ -231,6 +233,7 @@ void disp_init(void);
 void disp_draw_bitmap_task(void);
 void disp_set_bitmap(const uint8_t* const bitmap);
 void disp_set_char(char letter);
+void adc_buf_save_buf(const uint16_t* const adc_buf);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -527,7 +530,7 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 	if(false == samples_update_lock)
 	{
 		 // Copy data from DMA buffer so it wont change during further processing
-		memcpy(locked_samples_buff, &dma_adc_buff[0u],  sizeof(locked_samples_buff));
+		adc_buf_save_buf(&dma_adc_buff[0u]);
 	}
 }
 
@@ -541,7 +544,15 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	if(false == samples_update_lock)
 	{
 		// Copy data from DMA buffer so it wont change during further processing
-		memcpy(locked_samples_buff, &dma_adc_buff[SINGLE_CONV_SAMPLES], sizeof(locked_samples_buff));
+		adc_buf_save_buf(&dma_adc_buff[SINGLE_CONV_SAMPLES]);
+	}
+}
+
+void adc_buf_save_buf(const uint16_t* const adc_buf)
+{
+	for(uint16_t samples_cnt = 0u; samples_cnt < SINGLE_CONV_SAMPLES; samples_cnt++)
+	{
+		locked_samples_buff[samples_cnt] = (int16_t)(adc_buf[samples_cnt] - UINT16T_MAX/2);
 	}
 }
 

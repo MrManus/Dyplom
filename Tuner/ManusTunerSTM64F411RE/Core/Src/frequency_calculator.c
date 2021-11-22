@@ -9,7 +9,7 @@
 #include "math.h"
 
 
-float GetCrossCorr(uint16_t *SignalBuffer, uint16_t SignalLength, float *CrossCorrBuffer)
+float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, float *CrossCorrBuffer)
 {
 
 	uint16_t LagAmount = ((2*SignalLength)-1);
