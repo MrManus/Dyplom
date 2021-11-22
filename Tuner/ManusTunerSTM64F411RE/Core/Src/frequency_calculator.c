@@ -12,7 +12,7 @@
 float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossCorrBuffer)
 {
 
-	uint16_t LagAmount = SignalLength;
+	uint16_t LagAmount = SignalLength/2;
 	uint16_t SamplesAmount;
 	int32_t Nominator = 0;
 	uint16_t StarterSample;
@@ -28,22 +28,7 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 
 	for(uint16_t i = 0; i<LagAmount; i++)
 	{
-//		if(i < MiddleLag)
-//		{
-//			SamplesAmount = i + 1;
-//			Nominator = 0;
-//			StarterSample = SignalLength - SamplesAmount;
-//
-//			for(uint16_t j = 0; j < SamplesAmount; j++)
-//			{
-//
-//				Nominator = Nominator + ((int32_t)SignalBuffer[j] * (int32_t)SignalBuffer[StarterSample + j]);
-//			}
-//			CrossCorrBuffer[i] = Nominator;
-//		}
-//		else
-//		{
-//			SamplesAmount = (SignalLength - (i % MiddleLag)) - 1;
+
 			SamplesAmount = (SignalLength - i);
 			Nominator = 0;
 			StarterSample = SignalLength - SamplesAmount;
@@ -57,29 +42,19 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 				Nominator = 0;
 			}
 			CrossCorrBuffer[i] = Nominator;
-//		}
+
 	}
-// do przerobienia
-//	for(uint16_t LagCounter = 0; LagCounter < LagAmount; LagCounter++)
-//	{
-//		if(CrossCorrBuffer[LagCounter] < 0)
-//		{
-//			CrossCorrBuffer[LagCounter] = 0;
-//		}
-//	}
 
 // Calculating the length of middle corr peak
 	for(uint16_t LagCounter = MiddleLag; LagCounter < LagAmount; LagCounter++)
 	{
 		if(CrossCorrBuffer[LagCounter] == 0)
 		{
-//			MiddlePeakHalfLength = (LagCounter - 1) - MiddleLag;
 			MiddlePeakHalfLength = (LagCounter - 1);
 			break;
 		}
 	}
-// Setting all values of middle corr peak to zeros
-//	for(uint16_t LagCounter = (MiddleLag - MiddlePeakHalfLength); LagCounter < (MiddleLag + MiddlePeakHalfLength); LagCounter++)
+
 	for(uint16_t LagCounter = MiddleLag; LagCounter < MiddlePeakHalfLength; LagCounter++)
 
 	{
@@ -96,15 +71,7 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 		}
 	}
 
-//	if(SecHighPeakPos < MiddleLag)
-//	{
-//		Period = MiddleLag - SecHighPeakPos;
-//	}
-//	else if (SecHighPeakPos > MiddleLag)
-//	{
-//		Period = SecHighPeakPos - MiddleLag;
-//	}
-//
+
 	Period = SecHighPeakPos;
 
 	return PeriodHz = (float)SamplingFrequency / (float)Period;

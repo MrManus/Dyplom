@@ -108,8 +108,9 @@ typedef enum
 
 
 //MERGE
-#define BufferLength 7680
-#define CrossCorelationLength ((2*BufferLength) - 1)
+#define BufferLength SINGLE_CONV_SAMPLES
+//#define CrossCorelationLength ((2*BufferLength) - 1)
+#define CrossCorelationLength (BufferLength/2)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
