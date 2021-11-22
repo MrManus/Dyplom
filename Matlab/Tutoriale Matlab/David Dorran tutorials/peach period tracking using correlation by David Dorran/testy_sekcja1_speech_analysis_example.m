@@ -12,11 +12,11 @@ clear all
 close all 
  
 % [ip, fs] = audioread('speech_demo.wav');
-[ip, fs] = audioread('E4_mono176kHz.wav');
-% [ip, fs] = audioread('E2_mono176kHz.wav');
+
+[ip, fs] = audioread('trimed_E4_mono192kHz.wav');
 
 %sekcja do testów resampling
-%  [ipold, fsold] = audioread('E4_3sek_mono.wav');
+% [ipold, fsold] = audioread('E4_3sek_mono.wav');
 % ip = resample(ipold,20,2);
 % fs = 10*fsold;
 % % 
