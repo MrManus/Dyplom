@@ -9,21 +9,21 @@
 #include "math.h"
 
 
-float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, float *CrossCorrBuffer)
+float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossCorrBuffer)
 {
 
 	uint16_t LagAmount = ((2*SignalLength)-1);
 	uint16_t SamplesAmount;
-	float Nominator = 0;
+	int32_t Nominator = 0;
 	uint16_t StarterSample;
 
 	uint16_t MiddleLag = SignalLength;
 	uint16_t MiddlePeakHalfLength;
-	float SecHighPeakValue = 0;
+	int32_t SecHighPeakValue = 0;
 	uint16_t SecHighPeakPos;
 
-	float SamplingFrequency = SAMPLING_FREQUENCY;
-	float Period = 0;
+	uint32_t SamplingFrequency = SAMPLING_FREQUENCY;
+	uint16_t Period = 0;
 	float PeriodHz = 0;
 
 	for(uint16_t i = 0; i<LagAmount; i++)
@@ -37,7 +37,7 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, float *CrossCor
 			for(uint16_t j = 0; j < SamplesAmount; j++)
 			{
 
-				Nominator = Nominator + ((float)SignalBuffer[j] * (float)SignalBuffer[StarterSample + j]);
+				Nominator = Nominator + ((int32_t)SignalBuffer[j] * (int32_t)SignalBuffer[StarterSample + j]);
 			}
 			CrossCorrBuffer[i] = Nominator;
 		}
@@ -49,7 +49,7 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, float *CrossCor
 
 			for(uint16_t j = 0; j < SamplesAmount; j++)
 			{
-				Nominator = Nominator + ((float)SignalBuffer[StarterSample + j] * (float)SignalBuffer[j]);
+				Nominator = Nominator + ((int32_t)SignalBuffer[StarterSample + j] * (int32_t)SignalBuffer[j]);
 			}
 			CrossCorrBuffer[i] = Nominator;
 		}
@@ -95,7 +95,7 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, float *CrossCor
 		Period = SecHighPeakPos - MiddleLag;
 	}
 
-	return PeriodHz = SamplingFrequency / Period;
+	return PeriodHz = (float)SamplingFrequency / (float)Period;
 
 }
 

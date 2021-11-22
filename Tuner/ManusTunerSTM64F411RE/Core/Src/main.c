@@ -46,7 +46,7 @@ typedef union
 	uint16_t raw;
 }display_frm_u;
 
-#define UINT16T_MAX				0xFFFFu
+#define BIT10_MAX				1024
 
 #define MAX7219_NOOP_REGISTER   0x00
 #define MAX7219_DIGIT0_REGISTER 0x01
@@ -101,7 +101,7 @@ typedef enum
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-//#define SINGLE_CONV_SAMPLES	14112u
+//#define SINGLE_CONV_SAMPLES	3000u
 #define SINGLE_CONV_SAMPLES	7680u //TODO: Update to correct number of samples
 //#define SINGLE_CONV_SAMPLES	7680u
 #define DMA_ADC_BUFFER_LEN	(SINGLE_CONV_SAMPLES * 2u)
@@ -121,7 +121,7 @@ typedef enum
 
 /* USER CODE BEGIN PV */
 //MERGE
-float CrossCorrelationVaule[CrossCorelationLength];
+int32_t CrossCorrelationVaule[CrossCorelationLength];
 float PeriodHz;
 //MERGE
 
@@ -552,7 +552,7 @@ void adc_buf_save_buf(const uint16_t* const adc_buf)
 {
 	for(uint16_t samples_cnt = 0u; samples_cnt < SINGLE_CONV_SAMPLES; samples_cnt++)
 	{
-		locked_samples_buff[samples_cnt] = (int16_t)(adc_buf[samples_cnt] - UINT16T_MAX/2);
+		locked_samples_buff[samples_cnt] = (int16_t)((int16_t)adc_buf[samples_cnt] - (int16_t)(BIT10_MAX/2));
 	}
 }
 

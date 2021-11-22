@@ -11,7 +11,7 @@
 #define SAMPLING_FREQUENCY 192000;
 //#define SAMPLING_FREQUENCY 500;
 
-float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, float *CrossCorrBuffer);
+float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossCorrBuffer);
 
 //float LeftCrossCorr(float *SignalBuffer, uint16_t SignalLength, uint16_t SamplesAmount);
 
