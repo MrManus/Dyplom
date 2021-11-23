@@ -53,13 +53,18 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 			MiddlePeakHalfLength = (LagCounter - 1);
 			break;
 		}
+		else
+		{
+			CrossCorrBuffer[LagCounter] = 0;
+		}
 	}
 
-	for(uint16_t LagCounter = MiddleLag; LagCounter < MiddlePeakHalfLength; LagCounter++)
-
-	{
-		CrossCorrBuffer[LagCounter] = 0;
-	}
+// Setting middle peak to zeros
+//	for(uint16_t LagCounter = MiddleLag; LagCounter < MiddlePeakHalfLength; LagCounter++)
+//
+//	{
+//		CrossCorrBuffer[LagCounter] = 0;
+//	}
 
 // Finding second highest peak in corr
 	for(uint16_t LagCounter = 0; LagCounter < LagAmount; LagCounter++)

@@ -21,6 +21,7 @@ plot(t, x)
 ylabel('Amplitude')
 xlabel('Time (seconds)')
 title('Synthesised Signal');
+
 %% Zapis do pliku
 % data_to_export = single(x);
 % dlmwrite('sin_exported.txt',data_to_export,'delimiter',',','precision',9)
