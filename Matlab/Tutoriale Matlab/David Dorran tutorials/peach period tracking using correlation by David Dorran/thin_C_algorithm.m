@@ -36,10 +36,10 @@ for i= 1: 1: LagAmount
         for j = 1:1:SamplesAmount
 
             Nominator = Nominator + (SignalBuffer(StarterSample + j) * SignalBuffer(j));
-
-            if(Nominator < 0)
-                Nominator = 0;
-            end
+        end
+        
+        if(Nominator < 0)
+        Nominator = 0;
         end
         CrossCorrBuffer(CorrIndex) = Nominator;
     end
