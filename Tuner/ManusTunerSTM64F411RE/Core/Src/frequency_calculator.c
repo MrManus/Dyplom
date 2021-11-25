@@ -14,7 +14,7 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 
 
 
-	uint16_t LagAmount = SignalLength/2;
+	uint16_t LagAmount = SignalLength;
 	uint16_t SamplesAmount;
 	int32_t Nominator = 0;
 	uint16_t StarterSample;

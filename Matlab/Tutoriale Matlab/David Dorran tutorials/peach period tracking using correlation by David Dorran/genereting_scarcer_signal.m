@@ -2,7 +2,7 @@ close all
 clear all
 clc
 
-thining_rate = 200;
+thining_rate = 20;
 
 [E4_ip, E4_fs] = audioread('trimed_E4_mono192kHz.wav');
 E4_signal = E4_ip(1:7680);
