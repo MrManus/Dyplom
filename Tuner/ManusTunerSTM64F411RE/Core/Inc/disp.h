@@ -13,7 +13,7 @@
 
 void disp_init(SPI_HandleTypeDef* hspi);
 void display_task(void);
-void disp_set_char(char letter);
+void disp_set_note(notes_t letter);
 
 #endif
 

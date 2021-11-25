@@ -29,8 +29,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdbool.h>
+#include <float.h>
 #include <string.h>
 #include "frequency_calculator.h"
+#include "frequencies.h"
 #include "disp.h"
 /* USER CODE END Includes */
 
@@ -230,14 +232,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		/*
 		 * Here place 3s tasks //TODO: check if works in valid period
 		 */
-		static char letter = 'a';
-		disp_set_char(letter);
-		letter++;
 	}
 }
 
 void adc_data_processing_task(void)
 {
+	notes_t note = BAD_NOTE;
+
 	if(adc_task_state == ADC_BUFF_READY)
 	{
 		/* Lock the data so it wont be changed during processing */
@@ -247,6 +248,10 @@ void adc_data_processing_task(void)
 		 *	Here do all ADC data processing
 		 */
 		PeriodHz = CalcXcorrFreq(locked_samples_buff);
+
+		note = FindNote(PeriodHz);
+
+		disp_set_note(note);
 
 		/* Disable the lock after processing */
 		adc_task_state = ADC_BUFF_AQURING;

@@ -1,6 +1,8 @@
 
+#include <float.h>
 #include <stdint.h>
 #include "main.h"
+#include "frequencies.h"
 #include "disp.h"
 #include "disp_chars.h"
 
@@ -77,36 +79,67 @@ void disp_send_cmd(uint8_t cmd, uint8_t val);
 void disp_draw_bitmap_task(void);
 void disp_set_bitmap(const uint8_t* const bitmap);
 
-void disp_set_char(char letter)
+void disp_set_note(notes_t letter)
 {
 	const uint8_t* char_tab_ptr;
 
 	switch(letter)
 	{
-		case 'e':
-			char_tab_ptr = e_bitmap;
-			break;
-		case 'a':
-			char_tab_ptr = a_bitmap;
-			break;
-		case 'd':
-			char_tab_ptr = d_bitmap;
-			break;
-		case 'g':
-			char_tab_ptr = g_bitmap;
-			break;
-		case 'h':
-			char_tab_ptr = h_bitmap;
-			break;
-		case 'c':
+		case C2:
+		case C3:
+		case C4:
 			char_tab_ptr = c_bitmap;
 			break;
-		case 'f':
+		case CIS2:
+		case CIS3:
+		case CIS4:
+			char_tab_ptr = cis_bitmap;
+			break;
+		case D2:
+		case D3:
+		case D4:
+			char_tab_ptr = d_bitmap;
+			break;
+		case DIS2:
+		case DIS3:
+		case DIS4:
+			char_tab_ptr = dis_bitmap;
+			break;
+		case E2:
+		case E3:
+		case E4:
+			char_tab_ptr = e_bitmap;
+			break;
+		case F2:
+		case F3:
+		case F4:
 			char_tab_ptr = f_bitmap;
 			break;
-		case ' ':
-			char_tab_ptr = space_bitmap;
+		case FIS2:
+		case FIS3:
+			char_tab_ptr = fis_bitmap;
 			break;
+		case G2:
+		case G3:
+			char_tab_ptr = g_bitmap;
+			break;
+		case GIS2:
+		case GIS3:
+			char_tab_ptr = gis_bitmap;
+			break;
+		case A2:
+		case A3:
+			char_tab_ptr = a_bitmap;
+			break;
+		case AIS2:
+		case AIS3:
+			char_tab_ptr = ais_bitmap;
+			break;
+		case B2:
+		case B3:
+			char_tab_ptr = h_bitmap;
+			break;
+		case BAD_NOTE:
 		default:
 			char_tab_ptr = question_bitmap;
 			break;

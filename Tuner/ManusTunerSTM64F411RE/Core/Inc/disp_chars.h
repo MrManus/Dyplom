@@ -26,6 +26,15 @@ const uint8_t a_bitmap[DISP_ROWS] = {0b00000000,
 									 0b00100100,
 									 0b00000000};
 
+const uint8_t ais_bitmap[DISP_ROWS] = {0b11000000,
+									 0b11000000,
+									 0b00011000,
+									 0b00100100,
+									 0b00111100,
+									 0b00100100,
+									 0b00100100,
+									 0b00000000};
+
 const uint8_t d_bitmap[DISP_ROWS] = {0b00000000,
 									 0b00000000,
 									 0b00111000,
@@ -35,8 +44,26 @@ const uint8_t d_bitmap[DISP_ROWS] = {0b00000000,
 									 0b00111000,
 									 0b00000000};
 
+const uint8_t dis_bitmap[DISP_ROWS] = {0b11000000,
+									 0b11000000,
+									 0b00111000,
+									 0b00100100,
+									 0b00100100,
+									 0b00100100,
+									 0b00111000,
+									 0b00000000};
+
 const uint8_t g_bitmap[DISP_ROWS] = {0b00000000,
 									 0b00000000,
+									 0b00011100,
+									 0b00100000,
+									 0b00101100,
+									 0b00100100,
+									 0b00011100,
+									 0b00000000};
+
+const uint8_t gis_bitmap[DISP_ROWS] = {0b11000000,
+									 0b11000000,
 									 0b00011100,
 									 0b00100000,
 									 0b00101100,
@@ -62,8 +89,26 @@ const uint8_t c_bitmap[DISP_ROWS] = {0b00000000,
 									 0b00011100,
 									 0b00000000};
 
+const uint8_t cis_bitmap[DISP_ROWS] = {0b11000000,
+									 0b11000000,
+									 0b00011100,
+									 0b00100000,
+									 0b00100000,
+									 0b00100000,
+									 0b00011100,
+									 0b00000000};
+
 const uint8_t f_bitmap[DISP_ROWS] = {0b00000000,
 									 0b00000000,
+									 0b00111100,
+									 0b00100000,
+									 0b00111100,
+									 0b00100000,
+									 0b00100000,
+									 0b00000000};
+
+const uint8_t fis_bitmap[DISP_ROWS] = {0b11000000,
+									 0b11000000,
 									 0b00111100,
 									 0b00100000,
 									 0b00111100,
