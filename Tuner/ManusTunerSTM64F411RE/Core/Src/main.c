@@ -256,7 +256,10 @@ void adc_data_processing_task(void)
 
 		similarity_level = CalcSimiliratyLevel(note, PeriodHz);
 
-		disp_set_similarity_level(similarity_level);
+		if(note != BAD_NOTE)
+		{
+			disp_set_similarity_level(similarity_level);
+		}
 
 		/* Disable the lock after processing */
 		adc_task_state = ADC_BUFF_AQURING;

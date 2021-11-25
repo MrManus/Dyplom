@@ -143,7 +143,8 @@ void disp_set_note(notes_t letter)
 			break;
 		case BAD_NOTE:
 		default:
-			char_tab_ptr = question_bitmap;
+//			char_tab_ptr = question_bitmap;
+			char_tab_ptr = space_bitmap;
 			break;
 	}
 
