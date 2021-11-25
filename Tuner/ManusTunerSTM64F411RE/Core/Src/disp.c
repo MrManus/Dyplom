@@ -79,6 +79,8 @@ void disp_send_cmd(uint8_t cmd, uint8_t val);
 void disp_draw_bitmap_task(void);
 void disp_set_bitmap(const uint8_t* const bitmap);
 
+void disp_or_tables(uint8_t* tab_dest, uint8_t* tab_mask);
+
 void disp_set_note(notes_t letter)
 {
 	const uint8_t* char_tab_ptr;
@@ -146,6 +148,66 @@ void disp_set_note(notes_t letter)
 	}
 
 	disp_set_bitmap(char_tab_ptr);
+}
+
+void disp_or_tables(uint8_t* tab_dest, uint8_t* tab_mask)
+{
+	for(uint8_t row_cnt = 0u; row_cnt < DISP_ROWS; row_cnt++)
+	{
+		tab_dest[row_cnt] |= tab_mask[row_cnt];
+	}
+}
+
+
+void disp_set_similarity_level(int8_t similarity_level)
+{
+
+	if(similarity_level >= 0)
+	{
+		if((similarity_level >= 10) && (similarity_level <= 30))
+		{
+			disp_or_tables(disp_pixel, plus1_bitmap);
+		}
+		else if((similarity_level >= 30) && (similarity_level <= 50))
+		{
+			disp_or_tables(disp_pixel, plus2_bitmap);
+		}
+		else if((similarity_level >= 50) && (similarity_level <= 70))
+		{
+			disp_or_tables(disp_pixel, plus3_bitmap);
+		}
+		else if((similarity_level >= 70) && (similarity_level <= 100))
+		{
+			disp_or_tables(disp_pixel, plus4_bitmap);
+		}
+		else
+		{
+			disp_or_tables(disp_pixel, underscore_bitmap);
+		}
+	}
+	else
+	{
+		if((similarity_level <= -10) && (similarity_level >= -30))
+		{
+			disp_or_tables(disp_pixel, minus1_bitmap);
+		}
+		else if((similarity_level <= -30) && (similarity_level >= -50))
+		{
+			disp_or_tables(disp_pixel, minus2_bitmap);
+		}
+		else if((similarity_level <= -50) && (similarity_level >= -70))
+		{
+			disp_or_tables(disp_pixel, minus3_bitmap);
+		}
+		else if((similarity_level <= -70) && (similarity_level >= -100))
+		{
+			disp_or_tables(disp_pixel, minus4_bitmap);
+		}
+		else
+		{
+			disp_or_tables(disp_pixel, underscore_bitmap);
+		}
+	}
 }
 
 void disp_set_bitmap(const uint8_t* const bitmap)

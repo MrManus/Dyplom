@@ -69,6 +69,7 @@ volatile adc_task_t adc_task_state = ADC_BUFF_AQURING;
 volatile uint16_t tick_1ms = 0u;
 uint16_t dma_adc_buff[DMA_ADC_BUFFER_LEN];
 int16_t locked_samples_buff[SINGLE_CONV_SAMPLES];
+int8_t similarity_level;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -253,7 +254,9 @@ void adc_data_processing_task(void)
 
 		disp_set_note(note);
 
-		CalcSimiliratyLevel(note, PeriodHz);
+		similarity_level = CalcSimiliratyLevel(note, PeriodHz);
+
+		disp_set_similarity_level(similarity_level);
 
 		/* Disable the lock after processing */
 		adc_task_state = ADC_BUFF_AQURING;
