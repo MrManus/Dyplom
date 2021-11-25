@@ -8,11 +8,6 @@
 #ifndef INC_FREQUENCY_CALCULATOR_H_
 #define INC_FREQUENCY_CALCULATOR_H_
 
-#define SAMPLING_FREQUENCY 192000;
-//#define SAMPLING_FREQUENCY 500;
-
-float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossCorrBuffer);
-
-//float LeftCrossCorr(float *SignalBuffer, uint16_t SignalLength, uint16_t SamplesAmount);
+float CalcXcorrFreq(int16_t *SignalBuffer);
 
 #endif /* INC_FREQUENCY_CALCULATOR_H_ */

@@ -5,50 +5,48 @@
  *      Author: Manus
  */
 #include "main.h"
-#include "frequency_calculator.h"
 #include "math.h"
+#include "adc.h"
+#include "frequency_calculator.h"
 
+#define CrossCorelationLength (SINGLE_CONV_SAMPLES/2)
 
-float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossCorrBuffer)
+#define THINING_FACTOR 		20u
+#define SEARCH_RANGE 		20u
+#define LAG_AMOUNT 			(SINGLE_CONV_SAMPLES/2)
+#define THIN_LAG_AMOUNT 	(LAG_AMOUNT/THINING_FACTOR)
+#define MIDDLE_LAG			0u
+
+static int32_t AimedCrossCorr[CrossCorelationLength];
+static int32_t ThinCrossCorrBuffer[THIN_LAG_AMOUNT];
+
+static float GetCrossCorr(int16_t *SignalBuffer);
+
+static float GetCrossCorr(int16_t *SignalBuffer)
 {
-
-
-
-	uint16_t LagAmount = SignalLength;
 	uint16_t SamplesAmount;
 	int32_t Nominator = 0;
 	uint16_t StarterSample;
 
-	uint16_t MiddleLag = 0;
-//	uint16_t MiddlePeakHalfLength;
 	int32_t SecHighPeakValue = 0;
 	uint16_t SecHighPeakPos;
-//New
+
 	int32_t ThinSecHighPeakValue = 0;
 	uint16_t ThinSecHighPeakPos ;
 	uint16_t AimedPeakPos;
 
-
-	uint32_t SamplingFrequency = SAMPLING_FREQUENCY;
 	uint16_t Period = 0;
-	float PeriodHz = 0;
-
-	uint16_t ThiningFactor = 20;
-	uint16_t SearchRange = 100;
-	uint16_t ThinLagAmount = LagAmount/ThiningFactor;
-
-	uint32_t ThinCrossCorrBuffer[ThinLagAmount];
 
 	uint16_t ThinCorrIndex = 0;
 	uint16_t AimedCorrIndex = 0;
 
-	for(uint16_t i = 0; i<LagAmount; i++)
+	for(uint16_t i = 0; i<LAG_AMOUNT; i++)
 	{
-		if(i%ThiningFactor == 0)
+		if(i%THINING_FACTOR == 0)
 		{
-			SamplesAmount = (SignalLength - i);
+			SamplesAmount = (SINGLE_CONV_SAMPLES - i);
 			Nominator = 0;
-			StarterSample = SignalLength - SamplesAmount;
+			StarterSample = SINGLE_CONV_SAMPLES - SamplesAmount;
 
 			for(uint16_t j = 0; j < SamplesAmount; j++)
 			{
@@ -65,11 +63,10 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 
 
 // Calculating the length of middle corr peak
-	for(uint16_t LagCounter = MiddleLag; LagCounter < ThinLagAmount; LagCounter++)
+	for(uint16_t LagCounter = MIDDLE_LAG; LagCounter < THIN_LAG_AMOUNT; LagCounter++)
 	{
 		if(ThinCrossCorrBuffer[LagCounter] == 0)
 		{
-//			MiddlePeakHalfLength = (LagCounter - 1);
 			break;
 		}
 		else
@@ -81,7 +78,7 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 
 
 // Finding second highest peak in corr
-	for(uint16_t LagCounter = 0; LagCounter < ThinLagAmount; LagCounter++)
+	for(uint16_t LagCounter = 0; LagCounter < THIN_LAG_AMOUNT; LagCounter++)
 	{
 		if(ThinCrossCorrBuffer[LagCounter] > ThinSecHighPeakValue)
 		{
@@ -91,13 +88,13 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 	}
 
 // New Corr
-	AimedPeakPos = ThinSecHighPeakPos * ThiningFactor;
+	AimedPeakPos = ThinSecHighPeakPos * THINING_FACTOR;
 	//39
-	for(uint16_t i = (AimedPeakPos - SearchRange); i<=(AimedPeakPos + SearchRange); i++)
+	for(uint16_t i = (AimedPeakPos - SEARCH_RANGE); i<=(AimedPeakPos + SEARCH_RANGE); i++)
 	{
-			SamplesAmount = (SignalLength - i);
+			SamplesAmount = (SINGLE_CONV_SAMPLES - i);
 			Nominator = 0;
-			StarterSample = SignalLength - SamplesAmount;
+			StarterSample = SINGLE_CONV_SAMPLES - SamplesAmount;
 
 			for(uint16_t j = 0; j < SamplesAmount; j++)
 			{
@@ -107,24 +104,28 @@ float GetCrossCorr(int16_t *SignalBuffer, uint16_t SignalLength, int32_t *CrossC
 			{
 				Nominator = 0;
 			}
-			CrossCorrBuffer[AimedCorrIndex] = Nominator;
+			AimedCrossCorr[AimedCorrIndex] = Nominator;
 			AimedCorrIndex++;
 
 	}
 
-	for(uint16_t LagCounter = 0; LagCounter <= (SearchRange*2); LagCounter++)
+	for(uint16_t LagCounter = 0; LagCounter <= (SEARCH_RANGE*2); LagCounter++)
 	{
-		if(CrossCorrBuffer[LagCounter] > SecHighPeakValue)
+		if(AimedCrossCorr[LagCounter] > SecHighPeakValue)
 		{
-			SecHighPeakValue = CrossCorrBuffer[LagCounter];
-			SecHighPeakPos = (AimedPeakPos - SearchRange) + LagCounter;
+			SecHighPeakValue = AimedCrossCorr[LagCounter];
+			SecHighPeakPos = (AimedPeakPos - SEARCH_RANGE) + LagCounter;
 		}
 	}
 
 
 	Period = SecHighPeakPos;
 
-	return PeriodHz = (float)SamplingFrequency / (float)Period;
+	return (float)SAMPLING_FREQUENCY / (float)Period;
+}
 
+float CalcXcorrFreq(int16_t *SignalBuffer)
+{
+	return GetCrossCorr(SignalBuffer);
 }
 

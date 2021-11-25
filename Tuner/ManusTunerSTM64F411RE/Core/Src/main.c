@@ -101,16 +101,7 @@ typedef enum
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-//#define SINGLE_CONV_SAMPLES	3000u
-#define SINGLE_CONV_SAMPLES	7680u //TODO: Update to correct number of samples
-//#define SINGLE_CONV_SAMPLES	7680u
-#define DMA_ADC_BUFFER_LEN	(SINGLE_CONV_SAMPLES * 2u)
 
-
-//MERGE
-#define BufferLength SINGLE_CONV_SAMPLES
-//#define CrossCorelationLength ((2*BufferLength) - 1)
-#define CrossCorelationLength (BufferLength/2)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -121,10 +112,7 @@ typedef enum
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-//MERGE
-int32_t CrossCorrelationVaule[CrossCorelationLength];
 float PeriodHz;
-//MERGE
 
 volatile bool samples_update_lock = false;
 volatile uint16_t tick_1ms = 0u;
@@ -515,7 +503,7 @@ void adc_data_processing_task(void)
 	/*
 	 *	Here do all ADC data processing
 	 */
-	PeriodHz = GetCrossCorr(locked_samples_buff, SINGLE_CONV_SAMPLES, CrossCorrelationVaule);
+	PeriodHz = CalcXcorrFreq(locked_samples_buff);
 
 	/* Disable the lock after processing */
 	samples_update_lock = false;

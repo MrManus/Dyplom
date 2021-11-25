@@ -34,7 +34,9 @@ extern "C" {
 extern ADC_HandleTypeDef hadc1;
 
 /* USER CODE BEGIN Private defines */
-
+#define SAMPLING_FREQUENCY 192000u
+#define SINGLE_CONV_SAMPLES	7680u
+#define DMA_ADC_BUFFER_LEN	(SINGLE_CONV_SAMPLES * 2u)
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
