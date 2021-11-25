@@ -52,3 +52,14 @@ notes_t FindNote(float FrequencyHz)
 
 	return note;
 }
+
+int8_t CalcSimiliratyLevel(notes_t note, float FrequencyHz)
+{
+	float freq_range = (notes_freqs[note][NOTE_UPPER_FREQ] - notes_freqs[note][NOTE_LOWER_FREQ])/2.0f;
+	float middle_freq = (notes_freqs[note][NOTE_UPPER_FREQ] + notes_freqs[note][NOTE_LOWER_FREQ])/2.0f;
+	float freq_diff = FrequencyHz - middle_freq;
+
+	int8_t freq_percent = (int8_t)((freq_diff/freq_range) * 100);
+
+	return freq_percent;
+}

@@ -11,6 +11,8 @@
 #define NOTE_LOWER_FREQ	0u
 #define NOTE_UPPER_FREQ 1u
 
+#define SIMILARITY_LEVELS	4
+
 typedef enum
 {
 	BAD_NOTE = 0u,
@@ -50,5 +52,6 @@ typedef enum
 extern const float notes_freqs[NOTES_NUMBER][2u];
 
 notes_t FindNote(float FrequencyHz);
+int8_t CalcSimiliratyLevel(notes_t note, float FrequencyHz);
 
 #endif

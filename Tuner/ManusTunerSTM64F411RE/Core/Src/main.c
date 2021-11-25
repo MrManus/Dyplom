@@ -253,6 +253,8 @@ void adc_data_processing_task(void)
 
 		disp_set_note(note);
 
+		CalcSimiliratyLevel(note, PeriodHz);
+
 		/* Disable the lock after processing */
 		adc_task_state = ADC_BUFF_AQURING;
 	}
