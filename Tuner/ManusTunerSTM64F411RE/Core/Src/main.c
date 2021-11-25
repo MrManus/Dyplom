@@ -39,6 +39,13 @@
 
 #define BIT10_MAX				1024
 
+typedef enum
+{
+	ADC_BUFF_AQURING,
+	ADC_BUFF_READY,
+	ADC_BUFF_PROCESSING
+} adc_task_t;
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -56,7 +63,7 @@
 /* USER CODE BEGIN PV */
 float PeriodHz;
 
-volatile bool samples_update_lock = false;
+volatile adc_task_t adc_task_state = ADC_BUFF_AQURING;
 volatile uint16_t tick_1ms = 0u;
 uint16_t dma_adc_buff[DMA_ADC_BUFFER_LEN];
 int16_t locked_samples_buff[SINGLE_CONV_SAMPLES];
@@ -124,6 +131,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  adc_data_processing_task();
   }
   /* USER CODE END 3 */
 }
@@ -216,9 +224,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		/*
 		 * Here place 100ms tasks //TODO: check if works in valid period
 		 */
-
-//		adc_data_processing_task();
-
 	}
 	if(0u == tick_1ms % 3000u)
 	{
@@ -233,16 +238,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void adc_data_processing_task(void)
 {
-	/* Lock the data so it wont be changed during processing */
-	samples_update_lock = true;
+	if(adc_task_state == ADC_BUFF_READY)
+	{
+		/* Lock the data so it wont be changed during processing */
+		adc_task_state = ADC_BUFF_PROCESSING;
 
-	/*
-	 *	Here do all ADC data processing
-	 */
-	PeriodHz = CalcXcorrFreq(locked_samples_buff);
+		/*
+		 *	Here do all ADC data processing
+		 */
+		PeriodHz = CalcXcorrFreq(locked_samples_buff);
 
-	/* Disable the lock after processing */
-	samples_update_lock = false;
+		/* Disable the lock after processing */
+		adc_task_state = ADC_BUFF_AQURING;
+	}
 }
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
@@ -252,10 +260,12 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 	/* DBG End */
 
 	/* Allow to modify buffer only if it not used/locked */
-	if(false == samples_update_lock)
+	if(ADC_BUFF_AQURING == adc_task_state)
 	{
 		 // Copy data from DMA buffer so it wont change during further processing
 		adc_buf_save_buf(&dma_adc_buff[0u]);
+
+		adc_task_state = ADC_BUFF_READY;
 	}
 }
 
@@ -266,10 +276,12 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	/* DBG End */
 
 	/* Allow to modify buffer only if it not used/locked */
-	if(false == samples_update_lock)
+	if(ADC_BUFF_AQURING == adc_task_state)
 	{
 		// Copy data from DMA buffer so it wont change during further processing
 		adc_buf_save_buf(&dma_adc_buff[SINGLE_CONV_SAMPLES]);
+
+		adc_task_state = ADC_BUFF_READY;
 	}
 }
 
