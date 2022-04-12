@@ -2,8 +2,10 @@ close all
 clear all
 clc
 
-f_prob = 192000;
-f_sin = 329;
+f_prob = 48000;
+% f_prob = 96000;
+% f_prob = 192000;
+f_sin = 360;
 
 sig = gen_zaszum_sin(f_prob, f_sin); %wygeneruj sygna³ o czêstotliwosci podstawowej 329Hz próbkowany z czêstotliwosci¹ 44kHz
 temp_sig = sig; %stwórz kopie sygnalu na której dokonywane bêd¹ obliczenia

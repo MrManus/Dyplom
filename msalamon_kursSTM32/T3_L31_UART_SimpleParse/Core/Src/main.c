@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -26,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "ring_buffer.h"
 #include "string.h"
+#include "parser_simple.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -35,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ENDLINE '\n'
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -46,19 +46,17 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-RingBuffer_t ReciveBuffer;
-uint8_t ReciveTmp;
-uint8_t RecivedLines;
-uint8_t RecivedData[32];
-uint8_t i;
-uint8_t Tmp;
+RingBuffer_t ReceiveBuffer;
+uint8_t ReceiveTmp;
+uint8_t ReceivedLines;
+
+uint8_t ReceivedData[32];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
-void UartLog(char* Message);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -99,46 +97,22 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart2, &ReciveTmp, 1);
+  HAL_UART_Receive_IT(&huart2, &ReceiveTmp, 1);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(RecivedLines > 0)
+	  if(ReceivedLines > 0)
 	  {
-		  i = 0;
-		  do
-		  {
-			  RB_Read(&ReciveBuffer, &Tmp );
-			  if(Tmp == ENDLINE)
-			  {
-				  RecivedData[i] = 0;
-			  }
-			  else
-			  {
-				  RecivedData[i] = Tmp;
-			  }
-			  i++;
-		  }while(Tmp != ENDLINE);
 
-		  RecivedLines--;
+		  Parser_TakeLine(&ReceiveBuffer, ReceivedData);
+		  ReceivedLines--;
 
-		  //
-		  // LED_ON
-		  // LED_OFF
+		  Parser_Parse(ReceivedData);
 
-		  if(strcmp("LED_ON", (char*)RecivedData) == 0)
-		  {
-			  HAL_GPIO_WritePin(LD4_GPIO_Port,LD4_Pin, GPIO_PIN_SET);
-			  UartLog("LED On\n\r");
-		  }
-		  else if(strcmp("LED_OFF", (char*)RecivedData) == 0)
-		  {
-			  HAL_GPIO_WritePin(LD4_GPIO_Port,LD4_Pin, GPIO_PIN_RESET);
-			  UartLog("LED Off\n\r");
-		  }
 	  }
     /* USER CODE END WHILE */
 
@@ -156,13 +130,22 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = 16;
+  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+  RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -171,12 +154,12 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     Error_Handler();
   }
@@ -198,21 +181,18 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if(huart->Instance == USART2)
 	{
-		if(RB_OK == RB_Write(&ReciveBuffer, ReciveTmp))
+		if(RB_OK == RB_Write(&ReceiveBuffer, ReceiveTmp))
 		{
-			if(ReciveTmp == ENDLINE)
+			if(ReceiveTmp == ENDLINE)
 			{
-				RecivedLines++;
+				ReceivedLines++;
 			}
 		}
-		HAL_UART_Receive_IT(&huart2, &ReciveTmp, 1);
+		HAL_UART_Receive_IT(&huart2, &ReceiveTmp, 1);
 	}
 }
 
-void UartLog(char* Message)
-{
-	HAL_UART_Transmit(&huart2, (uint8_t*) Message, strlen(Message), 1000);
-}
+
 /* USER CODE END 4 */
 
 /**
@@ -247,4 +227,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif /* USE_FULL_ASSERT */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

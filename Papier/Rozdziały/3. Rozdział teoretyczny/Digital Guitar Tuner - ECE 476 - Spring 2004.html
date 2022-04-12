@@ -1,0 +1,2691 @@
+
+<!-- saved from url=(0160)https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2004/ddb25/complete2.htm?fbclid=IwAR2duPs09EEJbfjRS6jqSxw_t1oegIu4RXFeyk9EiKEuiaCP9lLOFLhY3A4 -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:st1="urn:schemas-microsoft-com:office:smarttags" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Digital Guitar Tuner - ECE 476 - Spring 2004</title>
+
+</head><body lang="EN-US" link="blue" vlink="purple" style="tab-interval:.5in"><embed src="solo.mp3" autostart="true" hidden="true" loop="false">
+
+
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 10">
+<meta name="Originator" content="Microsoft Word 10">
+<link rel="File-List" href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2004/ddb25/complete2_files/filelist.xml">
+<link rel="Edit-Time-Data" href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2004/ddb25/complete2_files/editdata.mso">
+<link rel="OLE-Object-Data" href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2004/ddb25/complete2_files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title> </title>
+<o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="place">
+<o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="City">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>-</o:Author>
+  <o:LastAuthor>labuser</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>703</o:TotalTime>
+  <o:Created>2004-04-30T13:40:00Z</o:Created>
+  <o:LastSaved>2004-04-30T13:40:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>4623</o:Words>
+  <o:Characters>26355</o:Characters>
+  <o:Company>-</o:Company>
+  <o:Lines>219</o:Lines>
+  <o:Paragraphs>61</o:Paragraphs>
+  <o:CharactersWithSpaces>30917</o:CharactersWithSpaces>
+  <o:Version>10.3501</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+span.spelle
+	{mso-style-name:spelle;}
+span.grame
+	{mso-style-name:grame;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:338238948;
+	mso-list-template-ids:-1231917518;}
+@list l0:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:1319655151;
+	mso-list-template-ids:-1554224344;}
+@list l1:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1705402137;
+	mso-list-template-ids:777155846;}
+@list l2:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:2125153693;
+	mso-list-template-ids:-1874194384;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+
+
+
+
+<div class="Section1">
+
+<p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:14.0pt;mso-bidi-font-style:italic">Digital
+Guitar Tuner<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:
+12.0pt;mso-bidi-font-style:italic"><span style="mso-tab-count:9">����������������������������������������������������������������������������������������������������������� </span><span class="SpellE">Dmitry</span> <span class="SpellE">Berenson</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:
+12.0pt;mso-bidi-font-style:italic">Galen Reeves<o:p></o:p></span></p>
+
+<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:
+12.0pt;mso-bidi-font-style:italic">ECE 476<o:p></o:p></span></p>
+
+<p class="MsoNormal" align="right" style="text-align:right"><span style="font-size:
+12.0pt;mso-bidi-font-style:italic">Spring 04<o:p></o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt;mso-bidi-font-style:italic">Introduction<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic">We
+created a digital guitar tuner that takes output from an electric guitar and
+helps the user tune it to �Standard E� tuning. <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic">The
+user interacts with the device by pushing buttons to select which string he or
+she is tuning. The user then plucks the string and the device displays if the
+string is too high frequency (sharp), too low frequency (flat), or within 0.5%
+of the desired value. We chose this project because both of us play guitar and
+don�t want to pay a lot for tuners. We were also very interested in applying
+some of the Digital Signal Processing (DSP) and analog amplification principles
+we learned in some of our other classes. This project gave us the opportunity
+to test out these principles in a real-world design.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt;mso-bidi-font-style:italic">High Level Design<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic">We
+got the idea for this project by browsing through previous years� project
+websites. Both of us play guitar and we both have a hard time keeping our
+instruments in tune. (<span class="GramE">partly</span> because we can�t tune by
+ear and partly because of </span><st1:city><st1:place><span style="font-size:
+  12.0pt;mso-bidi-font-style:italic">Ithaca</span></st1:place></st1:city><span style="font-size:12.0pt;mso-bidi-font-style:italic">�s weather). We knew that
+making a guitar tuner was feasible because there are portable guitar tuners. We
+figured that if we amplified the signal enough, did some hardware and software
+filtering, and displayed how far off the frequency was to the user, we�d be
+able to produce a tuner that could tune all six strings to within acceptable
+bounds. <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic">To
+accomplish the hardware amplification, we used a DC biasing element as well as
+a non-inverting amplifier. Below is a general circuit for such a task. Note:
+this is only part of the circuit we ended up using; please see Program/Hardware
+Design for the complete circuit.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-lastrow:yes">
+  <td width="332" valign="top" style="width:249.05pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+   coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+   filled="f" stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><v:shape id="_x0000_s1153" type="#_x0000_t75" style='position:absolute;
+   margin-left:-4.95pt;margin-top:13.8pt;width:239.05pt;height:187.85pt;
+   z-index:-1' wrapcoords="-68 0 -68 21514 21600 21514 21600 0 -68 0">
+   <v:imagedata src="complete2_files/image001.png" o:title="filter"/>
+   <w:wrap type="tight"/>
+  </v:shape><![endif]--><!--[if !vml]--><img width="319" height="250" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image002.gif" align="left" hspace="12" v:shapes="_x0000_s1153"><!--[endif]--><span style="font-size:12.0pt"><o:p></o:p></span></p>
+  </td>
+  <td width="95" valign="top" style="width:71.35pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><u><span style="font-size:12.0pt">Component<o:p></o:p></span></u></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><u><span style="font-size:12.0pt"><o:p><span style="text-decoration:none">&nbsp;</span></o:p></span></u></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt">C1<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt">R1s<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt">R2, R3<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt">C2<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt">Op-amp<o:p></o:p></span></p>
+  </td>
+  <td width="163" valign="top" style="width:1.7in;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><span style="font-size:12.0pt"><span style="mso-spacerun:yes">��������� </span><u>Purpose</u><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt">Blocks low frequency noise and
+  DC from the guitar.<o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt">Provide a DC offset (2.5V
+  when <span class="SpellE">Vcc</span> = 5).<o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt">Set the gain of the op-amp.
+  Av = 1 + R2/R3.<o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt">Blocks DC amplification.<o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt">Amplifies<o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:12.0pt">Fig. 1</span></b><span style="font-size:12.0pt">: A
+general circuit that amplifies AC and introduces a DC bias with a table
+describing the role of each component.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">A note about guitar strings
+(ha): Though strings are tuned to a fundamental frequency they simultaneously
+vibrate at other frequencies. The fundamental frequency is known as the first
+harmonic because it is most prominent and defines the tone of the string. The
+other harmonics (2nd, 3rd, etc interfere with the 1st). See the graph below<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" style='width:427.5pt;height:273pt'>
+ <v:imagedata src="complete2_files/image003.gif" o:title="harmonics2"/>
+</v:shape><![endif]--><!--[if !vml]--><img width="570" height="364" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image003.gif" v:shapes="_x0000_i1026"><!--[endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-size:12.0pt;mso-bidi-font-style:italic">Fig.
+2</span></b><span style="font-size:12.0pt;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">: This is the DFT of a 16 ms sample of the input from the B-string.
+Notice that all the harmonics occur at multiples of the fundamental frequency
+and the second harmonic is very large.</span><span style="font-size:12.0pt;
+mso-bidi-font-style:italic"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">There are also some basics
+about sampling, period and frequency the reader must understand before
+continuing. Frequency (f) is the inverse of period (T). The ADC can only
+effectively measure inputs in terms of period using time between samples (we
+would need a Fourier transform to measure frequency) thus we had to take our
+target frequencies and convert them to periods by taking their inverse. Also,
+the ADC samples at a finite intervals. According to the <span class="SpellE">Nyquist</span>
+sampling criterion, we must sample at least at twice the highest frequency to assure
+complete frequency data acquisition. Though the highest frequency we were
+trying to tune to was 329Hz, the string had higher harmonics (i.e. 2 and 3
+times the fundamental frequency), necessitating a sampling frequency of
+something like 5000Hz or a sampling period of 0.2ms. The amount of samples can
+be used as a measure of the period as shown in the table below:<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:black;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA"><br clear="all" style="page-break-before:always">
+</span><pre><b style="mso-bidi-font-weight:normal">Table 1</b>: �Standard E� Tuning</pre><pre><o:p>&nbsp;</o:p></pre><pre><u>String<span style="mso-spacerun:yes">�� </span><span class="GramE">Frequency(</span>Hz)<span style="mso-spacerun:yes">�� </span><span style="mso-spacerun:yes">�</span>Period(s)<span style="mso-spacerun:yes">�� </span>Samples at 5kHz (0.2ms)<o:p></o:p></u></pre><pre><u><o:p><span style="text-decoration:none">&nbsp;</span></o:p></u></pre><pre>1<span style="mso-spacerun:yes">� </span><span style="mso-spacerun:yes">�</span><span style="mso-tab-count:1">��� </span><span style="mso-spacerun:yes">��</span>E = 82.4069<span style="mso-spacerun:yes">����� </span>0.0121<span style="mso-spacerun:yes">���� </span>60.675</pre><pre>2<span style="mso-tab-count:1">������ </span><span style="mso-spacerun:yes">� </span>A = 110.0000<span style="mso-spacerun:yes">���� </span>0.0091<span style="mso-spacerun:yes">���� </span>45.45</pre><pre>3<span style="mso-spacerun:yes">�� </span><span style="mso-tab-count:1">��� </span><span style="mso-spacerun:yes">��</span>D = 146.8324<span style="mso-spacerun:yes">���� </span>0.0068<span style="mso-spacerun:yes">���� </span>34.05</pre><pre>4 <span style="mso-spacerun:yes">��</span><span style="mso-tab-count:1">��� </span><span style="mso-spacerun:yes">��</span>G = 195.9978<span style="mso-spacerun:yes">���� </span>0.0051<span style="mso-spacerun:yes">���� </span>25.5</pre><pre>5 <span style="mso-tab-count:1">����� </span><span style="mso-spacerun:yes">��</span>B = 246.9417<span style="mso-spacerun:yes">���� </span>0.0040<span style="mso-spacerun:yes">���� </span>20.248</pre><pre>6<span style="mso-tab-count:1">������ </span><span style="mso-spacerun:yes">� </span>e = 329.6277<span style="mso-spacerun:yes">���� </span>0.0030<span style="mso-spacerun:yes">���� </span>15.169</pre><pre><o:p>&nbsp;</o:p></pre>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">Since the distances between
+certain sampling values were small (for instance between string 6 and string 5)
+we had to measure multiple periods to get higher accuracy. This is discussed in
+the <span style="mso-bidi-font-style:italic">Program/Hardware Design section of
+the report.<o:p></o:p></span></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic">The
+logical structure of the program was the following: Every 0.2 ms the device
+reads the input from ADC and creates a sampled signal. The sampled signal is
+then filtered with a low-pass filter specific to the frequency of the string
+being tuned. Next, the program measures the period of the filtered signal by
+counting ten positive-edge zero-crossings. The sum of ten periods is compared
+with a target value and appropriate <span class="SpellE">LEDs</span> are lit to
+indicate the string is either too high, too low, or in tune. There are five <span class="SpellE">LEDs</span> with the central LED indicating that the guitar is in
+tune. If the guitar is near the correct frequency the <span class="SpellE">LEDs</span>
+above and below the central LED indicate that the string is high or low
+respectively. If the guitar string is not close to the correct tone then
+highest and lowest <span class="SpellE">LEDs</span> are used instead.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic">We
+didn�t use any IEEE, ISO, or ANSI standards. Nor did we make use of copyrighted
+code, patents, and trademarks.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><i><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><i><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt;mso-bidi-font-style:italic">Program/Hardware Design<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Hardware Design<o:p></o:p></span></i></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span class="GramE"><span style="font-size:12.0pt">Since the
+output of the guitar will be at low amplitude (about 3mV peek to peek), we must
+amplify the signal before running it to the Mega32�s ADC.</span></span><span style="font-size:12.0pt"> To do this, we used the circuit shown below:<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:6in;height:237pt'>
+ <v:imagedata src="complete2_files/image004.png" o:title="schem"/>
+</v:shape><![endif]--><!--[if !vml]--><img width="576" height="316" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image005.jpg" v:shapes="_x0000_i1027"><!--[endif]--></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><b><span style="font-size:12.0pt;mso-bidi-font-style:italic">Fig.
+3</span></b><span style="font-size:12.0pt;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">: This is a schematic of the analog circuitry used to amplify the
+guitar output before it enters the ADC. Each stage is described below.</span><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i style="mso-bidi-font-style:normal"><span style="font-size:12.0pt">Stage 1<o:p></o:p></span></i></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">The purpose of stage 1 is to
+filter out any DC bias the guitar may be applying to its AC output. We attached
+the guitar using alligator clips from the plug of the cable to the input and
+ground. The 1uF capacitor effectively blocks any DC bias and the two 1M-ohm
+resistors introduce a 2.5V bias to the AC signal to center it. In actuality,
+the bias introduced depended on the power source we were using. Variances were
+usually in the plus or minus 50mV range. These variances didn�t affect our
+software in any significant way because software was able to compensate for the
+variance. It is important to note the 3DB frequency (half amplitude) of the
+filter created by the 1uF capacitor and 1M-ohm resistor. The frequency of this
+high-pass filter is given by f = 1<span class="GramE">/(</span>2*pi*R3*C) = 0.16
+Hz.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Stage 2</span></i><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">The purpose of this stage is
+to amplify the guitar signal but block DC amplification. Since the DC offset is
+2.5V, amplifying the bias would cause the <span class="SpellE">opamp</span> to
+rail. For this reason, we put in a capacitor to ground, effectively blocking DC
+amplification. The low pass filter to ground formed by the capacitor and
+resistor has a 3DB cutoff frequency of f = 1<span class="GramE">/(</span>2*pi*R3*C)
+= 3.39 Hz. The <span class="SpellE">opamp</span> is set up in a non-inverting
+amplifier configuration, which has a voltage gain of Av = 1 + R2/R3 = 1 + 20.1/1
+= 21.1. The values of V+ and V- will be discussed in stage 3 because they are
+defined by the necessities of that stage.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Stage 3<o:p></o:p></span></i></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">Stage 3 is very similar to
+stage 2. Its purpose is to further amplify the signal so that it gets into the
+5V to 0V range (5V peek to peek with a 2.5V bias). This amplifier has a gain
+of Av = 1 + R2/R3 where R2 is the series combination of the 327-ohm and 328-ohm
+resistors (655 -ohms). Thus Av = 77.5. The total gain from stages 2 and 3 is
+thus 21.1 * 77.5 = 1636, <span class="SpellE">yeilding</span> a peek to peek
+voltage of 3mV * 1636 = 4.9V. <span class="GramE">Its</span> important to note
+here that the values of V+ and V- are arbitrary as long as they exceed roughly
+5.5V and -5.5V, respectively. We need these to be the rails of the op-amp to
+prevent clipping at roughly 4.5V (because the LM358 looses a diode-drop's worth
+of voltage). By increasing the rails of the <span class="SpellE">opamp</span>, we
+were able to amplify the AC into the 5V to 0V rails. This was done by trial and
+error: we turned the knobs on the voltage source until we saw no clipping on
+the oscilloscope. The low pass filter to ground formed by the capacitor and
+resistor has a 3DB cutoff frequency of f = 1<span class="GramE">/(</span>2*pi*R3*C)
+= 5.13Hz. Thus, overall, the circuit cuts out any frequencies below 5.13Hz.
+This isn�t a problem because this low frequency is out of the range of human
+hearing and unachievable on the guitar.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Stage 4<o:p></o:p></span></i></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">The purpose of this stage was
+to limit the voltage seen by the MCU. Since we didn't want to overload the ADC
+port, we needed to limit the voltage seen by ADC to within one diode drop of 5V
+or 0V. This is why we used the two diodes with the 10k resistor. The <span class="SpellE">MCU's</span> input port resistance dwarfs this 10k resistor but it
+provides a place to dissipate any power going to 5V or 0V through either diode.
+Without this 10k resistance one of the diodes would dissipate the power,
+probably burning it out.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Program Design</span></i><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">We used an interrupt driven
+task scheduler to implement our tuner. We set timer.0 to interrupt every 0.2 ms
+and used the interrupt to drive two tasks: <span class="GramE">sample(</span>)
+and <span class="SpellE">buttonSM</span>(). <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">The task <span class="SpellE"><span class="GramE">buttonSM</span></span><span class="GramE">(</span>) is run every 0.2
+ms. It samples and filters the input from the ADC, measures the length of ten
+periods, and compares it with a target period for the string being tuned. If the
+measured period is less than the target period the program sets the <span class="SpellE">LEDs</span> indicating that the <span class="GramE">string�s</span>
+frequency is too high. If it is greater than the target period the programs
+sets the <span class="SpellE">LEDs</span> indicated that the string�s frequency
+is too low. If it is within a predetermined bound from the target the �in tune�
+LED is lit.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><!--[if mso & !supportInlineShapes & supportFields]><span
+style='font-size:12.0pt;mso-bidi-font-style:italic'><span style='mso-element:
+field-begin;mso-field-lock:yes'></span><span style='mso-spacerun:yes'>�</span>SHAPE<span
+style='mso-spacerun:yes'>� </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span style="font-size:12.0pt;mso-bidi-font-style:italic"><!--[if gte vml 1]><v:group
+ id="_x0000_s1110" editas="orgchart" style='width:434.25pt;height:540pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="1987,2167" coordsize="8685,10800">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <o:diagram v:ext="edit" dgmstyle="0" dgmfontsize="12"/>
+ <v:shape id="_x0000_s1111" type="#_x0000_t75" style='position:absolute;left:1987;
+  top:2167;width:8685;height:10800' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202"
+  path="m,l,21600r21600,l21600,xe">
+  <v:stroke joinstyle="miter"/>
+  <v:path gradientshapeok="t" o:connecttype="rect"/>
+ </v:shapetype><v:shape id="_x0000_s1112" type="#_x0000_t202" style='position:absolute;
+  left:5047;top:2527;width:4320;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1112' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>x(</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'>t)</span></b><span
+     style='font-size:12.0pt'><span style='mso-spacerun:yes'>� </span>- <i
+     style='mso-bidi-font-style:normal'>continuous signal from hardware</i><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:rect id="_x0000_s1113" style='position:absolute;left:2347;top:3067;
+  width:7740;height:9720'/>
+ <v:shape id="_x0000_s1114" type="#_x0000_t202" style='position:absolute;
+  left:3427;top:3427;width:3960;height:540'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1114'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>x(</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'>n) = x(t)</span></b><i
+     style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'> -
+     sample the guitar signal<o:p></o:p></span></i></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1115" type="#_x0000_t202" style='position:absolute;
+  left:2707;top:4687;width:5400;height:540'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1115'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>y(</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'>n) = a*y(n-1)+(1-a)*x(n) </span></b><i
+     style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'><span
+     style='mso-spacerun:yes'>�</span>- filter the signal<o:p></o:p></span></i></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1116" style='position:absolute' from="5227,3967"
+  to="5228,4687">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1117" style='position:absolute' from="5227,2887"
+  to="5228,3427">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1118" type="#_x0000_t202" style='position:absolute;
+  left:5272;top:4147;width:1080;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1118' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>x(</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'>n)</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1119" type="#_x0000_t202" style='position:absolute;
+  left:5302;top:5407;width:1080;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1119' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>y(</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'>n)</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1120" style='position:absolute' from="5227,5227"
+  to="5228,5947">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1121" type="#_x0000_t202" style='position:absolute;
+  left:2707;top:5947;width:5580;height:540'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1121'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>Do <span class=GramE>y(</span>n-1) and y(n)
+     represent zero-crossing?</span></b><i style='mso-bidi-font-style:normal'><span
+     style='font-size:12.0pt'> <span class=GramE>filter</span> the signal<o:p></o:p></span></i></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1122" type="#_x0000_t202" style='position:absolute;
+  left:7207;top:6667;width:540;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1122' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>yes</span></b></span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1123" type="#_x0000_t202" style='position:absolute;
+  left:3247;top:7207;width:1440;height:540'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1123'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt'>period</span></i></b></span><b
+     style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'>++</span></b><i
+     style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'><o:p></o:p></span></i></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1124" type="#_x0000_t202" style='position:absolute;
+  left:5407;top:7222;width:2700;height:540'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1124'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>Seen ten crossings?</span></b><i
+     style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'><o:p></o:p></span></i></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1125" type="#_x0000_t202" style='position:absolute;
+  left:5632;top:7927;width:540;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1125' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>yes</span></b></span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1126" type="#_x0000_t202" style='position:absolute;
+  left:3607;top:11707;width:2880;height:900'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1126'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt'>crossings</span></i></b></span><b
+     style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'> = 0<o:p></o:p></span></b></p>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt'>period</span></i></b></span><b
+     style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'> = 0</span></b><i
+     style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'><o:p></o:p></span></i></p>
+     <p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+     style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></i></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1127" type="#_x0000_t202" style='position:absolute;
+  left:3607;top:8467;width:3060;height:900'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1127'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>Compare <i style='mso-bidi-font-style:normal'>period</i>
+     with 10*<span class=SpellE><i style='mso-bidi-font-style:normal'>target_period</i></span><o:p></o:p></span></b></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1128" type="#_x0000_t202" style='position:absolute;
+  left:8527;top:4747;width:1080;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1128' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>y(</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'>n-1)</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1129" type="#_x0000_t202" style='position:absolute;
+  left:8737;top:5992;width:1080;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1129' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>y(</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'>n-1)</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1130" style='position:absolute' from="7102,6502"
+  to="7103,7222">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1131" style='position:absolute;flip:x' from="8107,4972"
+  to="8467,4973">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1132" style='position:absolute;flip:x' from="8287,6217"
+  to="8647,6218">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1133" style='position:absolute;flip:x' from="8107,7567"
+  to="8467,7568">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1134" type="#_x0000_t202" style='position:absolute;
+  left:4057;top:6652;width:540;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1134' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>no</span></b></span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1135" style='position:absolute' from="3967,6487"
+  to="3968,7207">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1136" type="#_x0000_t202" style='position:absolute;
+  left:7207;top:8467;width:1800;height:885'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1136'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt'>period</span></i></b></span><b
+     style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'>++<o:p></o:p></span></b></p>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt'>crossings</span></i></b></span><b
+     style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'>++</span></b><i
+     style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'><o:p></o:p></span></i></p>
+     <p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
+     style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></i></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1137" type="#_x0000_t202" style='position:absolute;
+  left:7927;top:7927;width:540;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1137' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>no</span></b></span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1138" style='position:absolute' from="7837,7762"
+  to="7838,8482">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1139" style='position:absolute' from="5587,7747"
+  to="5588,8467">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1140" type="#_x0000_t202" style='position:absolute;
+  left:8467;top:7387;width:1260;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1140' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt'>crossings</span></i></b></span><i
+     style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'><o:p></o:p></span></i></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1141" type="#_x0000_t202" style='position:absolute;
+  left:2572;top:9652;width:1260;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1141' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>if</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'> greater</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1142" type="#_x0000_t202" style='position:absolute;
+  left:4912;top:9652;width:1080;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1142' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>if</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'> equal </span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1143" type="#_x0000_t202" style='position:absolute;
+  left:6397;top:9652;width:900;height:360' strokecolor="white" strokeweight="0">
+  <v:textbox style='mso-next-textbox:#_x0000_s1143' inset="0,0,0,0">
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>if</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'> less</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1144" type="#_x0000_t202" style='position:absolute;
+  left:2707;top:10267;width:1260;height:900'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1144'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>string</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'> is low</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1145" type="#_x0000_t202" style='position:absolute;
+  left:6127;top:10267;width:1260;height:900'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1145'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>string</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'> is high</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1146" type="#_x0000_t202" style='position:absolute;
+  left:4507;top:10267;width:1260;height:900'>
+  <v:textbox style='mso-next-textbox:#_x0000_s1146'>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'><span
+     style='font-size:14.0pt'>string</span></b></span><b style='mso-bidi-font-weight:
+     normal'><span style='font-size:14.0pt'> is in tune</span></b><span
+     style='font-size:12.0pt'><o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1147" style='position:absolute' from="3787,9367"
+  to="3787,10267">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1148" style='position:absolute' from="4867,9367"
+  to="4868,10267">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1149" style='position:absolute' from="6307,9367"
+  to="6307,10267">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1150" style='position:absolute' from="3787,11167"
+  to="3787,11707">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1151" style='position:absolute' from="4867,11167"
+  to="4867,11707">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1152" style='position:absolute' from="6307,11167"
+  to="6307,11707">
+  <v:stroke endarrow="block"/>
+ </v:line><w:wrap type="none"/>
+ <w:anchorlock/>
+</v:group><![endif]--><!--[if !vml]--><img width="579" height="720" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image006.gif" alt="Organization Chart" v:shapes="_x0000_s1110 _x0000_s1111 _x0000_s1112 _x0000_s1113 _x0000_s1114 _x0000_s1115 _x0000_s1116 _x0000_s1117 _x0000_s1118 _x0000_s1119 _x0000_s1120 _x0000_s1121 _x0000_s1122 _x0000_s1123 _x0000_s1124 _x0000_s1125 _x0000_s1126 _x0000_s1127 _x0000_s1128 _x0000_s1129 _x0000_s1130 _x0000_s1131 _x0000_s1132 _x0000_s1133 _x0000_s1134 _x0000_s1135 _x0000_s1136 _x0000_s1137 _x0000_s1138 _x0000_s1139 _x0000_s1140 _x0000_s1141 _x0000_s1142 _x0000_s1143 _x0000_s1144 _x0000_s1145 _x0000_s1146 _x0000_s1147 _x0000_s1148 _x0000_s1149 _x0000_s1150 _x0000_s1151 _x0000_s1152"><!--[endif]--></span><!--[if mso & !supportInlineShapes & supportFields]><span
+style='font-size:12.0pt;mso-bidi-font-style:italic'><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:434.25pt;height:540pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span></span><![endif]--><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-size:12.0pt;mso-bidi-font-style:italic">Fig.
+4</span></b><span style="font-size:12.0pt;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">: The box represents the program flow when task <span class="GramE">sample(</span>)
+is run. Because the task is run every 0.2 ms the signal <span class="GramE">x(</span>t)
+is sampled at 5 kHz.</span><span style="font-size:12.0pt;mso-bidi-font-style:
+italic"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">The user determines which
+string is being tuned by pressing one of 6 buttons where each button
+corresponds to a string. The task <span class="SpellE"><span class="GramE">buttonSM</span></span><span class="GramE">(</span>) is run every 30 ms and detects the button presses. It
+then sets the state variable �string� to the value corresponding to the pressed
+button and runs <span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>). The task <span class="SpellE">set_string</span>() outputs
+the name of the string being tuned to the LCD and sets all the period bounds
+and filter coefficients based on the values stored in arrays.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">During initialization, three
+different levels of bounds on the period are determined for each string. The
+largest bounds set the limit on triggering. No triggering or period
+measurements will be made while the input frequency is outside these largest
+bounds. The smallest bounds determine if the string is in tune. As long as the
+input frequency is within the tight bounds it is within 0.5% of the
+desired frequency and the string <span class="GramE">is</span> considered to be
+in tune. The medium sized bounds are in between and determine which <span class="SpellE">LEDs</span> are lit. The largest bounds are created by multiplying
+and dividing the target period by a factor that corresponds to roughly a whole
+step. The notes that we hear are related to the frequency by the following
+equation:<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1030"
+ type="#_x0000_t75" style='width:80.25pt;height:35.25pt' o:ole="">
+ <v:imagedata src="complete2_files/image007.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img width="107" height="47" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image008.gif" v:shapes="_x0000_i1030"><!--[endif]--></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1030"
+  DrawAspect="Content" ObjectID="_1144823211">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><span style="mso-spacerun:yes">�</span><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">In the equation, �C0�is the
+frequency of the note C0 and �n� is the number of semitones above C0. It is
+easy to see that multiplying or dividing the target frequency by 2<span class="GramE">^(</span>1/12) creates frequency bounds that corresponds to plus or
+minus one semitone.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Filtering</span></i><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">To calculate the period of
+the input signal we counted the number of samples between zero-crossings. Zero-crossings
+occur when the input signal goes from below to above a bias voltage centered in
+the middle of the signal's voltage range. All of the guitar strings contain
+higher harmonics and the second harmonics are large enough that they may cause
+additional zero-crossings on the input signal. Therefore, if the higher
+harmonics are not removed through filtering a true measurement of the
+period can not be obtained.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">In choosing a filtering
+method we needed to trade off between ideal filter characteristics and speed of
+filtering. Since the second harmonics are always twice the fundamental
+frequency the filter did not need to have a steep cutoff. Also, because the
+device was limited by how many calculations could be performed, the filter
+needed to be very fast. Therefore, we used a simple low-pass infinite impulse response
+(IIR) filter to remove the higher harmonics. The filter does not have a very
+steep cutoff but is very fast to implement because it requires only two
+multiplies and one divide, which can be implemented via a shift. For an input
+signal <span class="GramE">x(</span>n) and a filtered signal y(n) the filtering
+is performed with the following equation:<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1031"
+ type="#_x0000_t75" style='width:198pt;height:20.25pt' o:ole="">
+ <v:imagedata src="complete2_files/image009.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img width="264" height="27" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image010.gif" v:shapes="_x0000_i1031"><!--[endif]--></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1031"
+  DrawAspect="Content" ObjectID="_1144823212">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">In the equation �a� is a
+parameter between zero and one which determines the width of the low pass filter.
+If �a� is near zero the filter is similar to an all-pass filter and very little
+filtering is done. If �a� is near one the filter has a very steep cutoff and
+only very low frequencies will be retained. To see this, observe that the
+frequency response of the filter is given below where T is the sampling period
+of 0.2 ms: <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1032"
+ type="#_x0000_t75" style='width:126pt;height:39pt' o:ole="">
+ <v:imagedata src="complete2_files/image011.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img width="168" height="52" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image012.gif" v:shapes="_x0000_i1032"><!--[endif]--></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1032"
+  DrawAspect="Content" ObjectID="_1144823213">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt"><sub><!--[if gte vml 1]><v:shape id="_x0000_i1033"
+ type="#_x0000_t75" style='width:189pt;height:44.25pt' o:ole="">
+ <v:imagedata src="complete2_files/image013.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]--><img width="252" height="59" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image014.gif" v:shapes="_x0000_i1033"><!--[endif]--></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1033"
+  DrawAspect="Content" ObjectID="_1144823214">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">Because the denominator
+increases with frequency (until the frequency reaches half of the sampling
+frequency) this filter acts as a low pass filter. To filter the guitar strings
+such that only the fundamental frequency caused zero-crossings we had to make
+sure that the second harmonic was greatly attenuated with respect to the first
+harmonic. However, we could not make �a� too large or we would not be able to
+detect the fundamental frequency. Therefore the program sets the value of �a�
+depending on which string is being tuned. Larger values are used for the low
+strings and smaller values for the high strings. Below are two graphs, one in
+the time domain and one in the frequency domain, showing the unfiltered and
+filtered samples of the b-<span class="GramE">string.</span> Notice that filter H
+is shown in the second graph.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1028" type="#_x0000_t75" style='width:426pt;height:273pt'>
+ <v:imagedata src="complete2_files/image015.gif" o:title="bstringsamples2"/>
+</v:shape><![endif]--><!--[if !vml]--><img width="568" height="364" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image015.gif" v:shapes="_x0000_i1028"><!--[endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-size:12.0pt;mso-bidi-font-style:italic">Fig.
+5</span></b><span style="font-size:12.0pt;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">: This is a 16 ms segment of the input from ADC. Notice that the
+secondary humps in the unfiltered signal cause zero-crossings. Also, the
+amplitude of the filtered signal is much less than the unfiltered signal.</span><span style="font-size:12.0pt;mso-bidi-font-style:italic"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1029" type="#_x0000_t75" style='width:426pt;height:273pt'>
+ <v:imagedata src="complete2_files/image016.gif" o:title="b-string-response"/>
+</v:shape><![endif]--><!--[if !vml]--><img width="568" height="364" src="./Digital Guitar Tuner - ECE 476 - Spring 2004_files/image016.gif" v:shapes="_x0000_i1029"><!--[endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-size:12.0pt;mso-bidi-font-style:italic">Fig.
+6</span></b><span style="font-size:12.0pt;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">: These are the <span class="SpellE">DFTs</span> of the filtered and
+unfiltered 16 ms segment of the input from ADC along with the frequency response
+(Discrete Time Fourier Transform) of the filter. Notice that the second
+harmonic is attenuated by a factor of 0.2 while the first harmonic is
+attenuated by a factor of 0.55.</span><span style="font-size:12.0pt;mso-bidi-font-style:
+italic"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Things We Tried That
+Didn't Work</span></i><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i style="mso-bidi-font-style:normal"><span style="font-size:12.0pt">Hardware<o:p></o:p></span></i></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">At first we thought we could
+achieve the high gain necessary using only one op-amp. This proved to be
+impractical because the output fluctuated substantially and was somewhat noisy.
+After we moved to the two op-amp scheme we found that the gain on stage 3 was
+very sensitive. We knew we wanted a gain of roughly 1666 (5V/3mV) but we had to
+try a lot of different resistor combinations for both R2 and R3 (of both stage
+2 and 3) until we found one that was suitable. In retrospect it may have been
+more efficient to use a potentiometer for either R2 or R3 or both.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Program</span></i><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">Initially we measured the
+input frequency by measuring the length of only one period. This was a very
+poor idea because the period of the high E string corresponds to only 15 samples. This
+meant we had very poor accuracy when trying to determine the true period of the
+input. To add some accuracy we tried to interpolate a straight line between the
+points on both sides of the zero-crossings. This involved two add operations
+and one divide. This technique added some accuracy but was still very
+unreliable when the input signal was not a nice sine wave. We therefore ended
+up counting ten periods instead of one to achieve necessary accuracy and
+stability.<span style="mso-spacerun:yes">� </span><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Filtering</span></i><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt;mso-bidi-font-weight:bold">When
+we first looked at the input signals from the guitar we thought that perhaps we
+would not need to do any filtering because the input signals had spikes that
+coincided with their fundamental frequencies. We reasoned that if we simply
+moved the bias up to the point that only the spikes would cause triggering then
+we would not need to worry about the smaller humps caused by the higher
+harmonics. However, although the signals appeared nice over small time spans
+their form fluctuated over longer time spans. As the string rang the
+orientation and size of the secondary humps changed such that there was never a
+bias which would always trigger on only the fundamental frequency.</span><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal"><i><span style="font-size:12.0pt">Testing<o:p></o:p></span></i></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">Since we couldn't always
+bring the guitar to lab (and we had to test the accuracy and amplification of
+the circuit) we had to use the signal generator to fake the guitar input. The
+way we did this was rather tricky. Even when the amplitude of the signal
+generator was turned all the way down, the amplitude was still about 50mV peek
+to peek (remember we needed to get down to 3mV peek to peek to fake the guitar
+signal amplitude). Thus, we ran the signal generator output through a
+potentiometer, which we tuned until we got a 3mV peek to peek signal. It was
+difficult to determine the exact amplitude because the oscilloscope couldn't
+cut through the <i>huge</i> amount of noise coming out of the signal generator.
+We had to "eyeball" the amplitude from the oscilloscope screen.
+Surprisingly, the guitar was a much better signal generator than the one in the
+lab. The guitar input was significantly less noisy, although the hardware cut
+out all the noise (even from the signal generator) before routing the signal to
+the ADC.<span style="mso-spacerun:yes">� </span><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">We tested the accuracy of the
+device by tuning the guitar until the middle LED was lit, which meant the
+device read the input as being in-tune. To assure accuracy, we plugged the
+guitar into a handheld guitar tuner and saw that that the input was usually a
+few percent below what it should have been. We calibrated the device
+accordingly and re-tested until we matched the handheld guitar tuner�s assessment.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><i style="mso-bidi-font-style:
+normal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt"><o:p><span style="text-decoration:none">&nbsp;</span></o:p></span></u></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt">Results of the Design<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal"><i style="mso-bidi-font-style:normal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">The necessary time-bound was
+that all computation be done during the sampling interval or 0.2 ms. <span class="GramE">By</span> examining the graphs we see that there are no
+discontinuities--which would indicate timing problems. Testing also showed that
+there were no timing or concurrency problems.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span class="GramE"><span style="font-size:12.0pt">By using a
+handheld <span class="SpellE">Korg</span> guitar tuner.</span></span><span style="font-size:12.0pt"> We saw that our tuned frequencies where within 1% of
+the intended value. The resolution on this device is not very good, so that is
+the closest we could estimate the frequency. Our calculated accuracy is 0.5%.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">There may be some RF
+interference from the long wire going to the CPU. We don�t think this is very
+significant because it didn�t disrupt our input signal. Therefore it�s unlikely
+we disrupted other groups� devices.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">The device is very user
+friendly. The user sees which string they are tuning on the LCD, can select a
+new string by pushing one of six buttons, and can see the deviation in
+frequency on the five <span class="SpellE">LEDs</span> of the STK500 board.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt;mso-bidi-font-style:italic">Conclusion<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">Our guitar tuner conformed to
+our expectations. When we started we were not sure what kind of stability and
+accuracy we could achieve in our tuner. As we continued to improve the device
+we became more and more impressed and satisfied with our tuner's performance.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">If we were to do this over
+again we would want to investigate some of the advantages and disadvantages of
+a fasters sampling frequency. While developing our tuner we did not want to
+sample faster than we could compute the frequency. However, now that we know what
+is involved in frequency calculation we could have attempted to sample faster
+to improve accuracy.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt">We developed the basic
+structure for our design by researching past ECE 476 projects as well as
+researching online. Some good sources of information were online newsgroups
+where people were able to contribute there ideas on guitar tuners freely.
+Because people in the newsgroups were anonymous and were offering their
+information to help people building devices similar to ours we assumed to that
+the basic very low-level design information was not copyrighted. We wrote all
+the code in our device and we developed all the specifics of our design
+ourselves with some help from the <span class="GramE">TAs.</span> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><i style="mso-bidi-font-style:normal"><span style="font-size:12.0pt">IEEE Code of Ethics Considerations<o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to accept responsibility in making
+engineering decisions consistent with the safety, health and welfare of the
+public, and to disclose promptly factors that might endanger the public or the
+environment; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">Our project represents very little of a
+danger to health and welfare of the public. The only dangers, which would arise
+from someone reassembling our circuits, would be and overheated or blown
+circuit element.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to avoid real or perceived conflicts of
+interest whenever possible, and to disclose them to affected parties when they
+do exist; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">Our guitar tuner was built for our own
+education and enjoyment for ECE 476. Therefore there are no potential conflicts
+of interest.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to be honest and realistic in stating
+claims or estimates based on available data; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">We were honest and realistic to the best
+of our knowledge.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to reject bribery in all its forms; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">Unfortunately this was not applicable to
+our project.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to improve the understanding of
+technology, its appropriate application, and potential consequences; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">We gained understanding in DSP and analog
+hardware design. We therefore furthered our own understanding of technology.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to maintain and improve our technical
+competence and to undertake technological tasks for others only if qualified by
+training or experience, or after full disclosure of pertinent limitations; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">We improved our technical competence
+through design and testing. We were well aware of our limitations as junior ECE
+students who haven�t had a lot of experience with design.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to seek, accept, and offer honest
+criticism of technical work, to acknowledge and correct errors, and to credit
+properly the contributions of others; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">We mentioned those who helped us in the
+report and were always honest with one another about project problems. We
+freely discussed our design with others creating guitar tuners.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to treat fairly all persons regardless of
+such factors as race, religion, gender, disability, age, or national origin; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">There was no discrimination of any kind
+involved in our project.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size:12.0pt;color:black">to avoid injuring others, their property,
+reputation, or employment by false or malicious action; <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">We did not commit any false or malicious
+action during the course of this project.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:list .25in"><!--[if !supportLists]--><span style="font-size:12.0pt;color:black"><span style="mso-list:Ignore">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span></span></span><!--[endif]--><span class="GramE"><span style="font-size:12.0pt;color:black">to</span></span><span style="font-size:12.0pt;color:black"> assist colleagues and co-workers in their
+professional development and to support them in following this code of ethics. <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt;color:black">We always helped people that asked questions
+of us thus helping them to develop a further understand of electrical
+engineering.</span><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt">Appendix
+A: Costs<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><br>
+2 breadboards: <span style="mso-tab-count:1">����������� </span><span style="mso-spacerun:yes">����</span>$10.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt">1 LCD Display: <span style="mso-tab-count:1">���������� </span><span style="mso-spacerun:yes">����</span>$5.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt">1 Mega32: <span style="mso-tab-count:1">������ </span><span style="mso-spacerun:yes">����������������</span>$8.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt">1 LM358 (op amps): <span style="mso-tab-count:1">�� </span><span style="mso-spacerun:yes">����</span>$0.43 <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt">8 Resistors: <span style="mso-tab-count:2">����������������� </span><span style="mso-spacerun:yes">����</span>$0.08<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt">3 Capacitors: <span style="mso-tab-count:2">�������������� </span><span style="mso-spacerun:yes">����</span>$0.75<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><u><span style="font-size:12.0pt">2 1N914 (diodes): <span style="mso-tab-count:1">������ </span><span style="mso-spacerun:yes">����</span>$0.02<o:p></o:p></span></u></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt">Total:<span style="mso-tab-count:3">��������������������������� </span><span style="mso-spacerun:yes">�� </span>$24.28<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt">All of these components were available in the lab so
+we didn�t use any vendors.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt">Appendix
+B: Task Breakdown<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span class="SpellE"><span style="font-size:12.0pt">Dmitry</span></span><span style="font-size:12.0pt"> <span class="SpellE">Berenson</span>: Hardware design,
+testing, and implementation. <span class="GramE">Creating web-site.</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><span style="mso-spacerun:yes">�</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt">Galen Reeves: Software filtering. <span class="GramE">Program
+design, testing, and implementation.</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><i style="mso-bidi-font-style:normal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt">Appendix
+C: Data Sheets<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><a href="http://rocky.digikey.com/WebLib/Texas%20Instruments/Web%20data/LM158(A),%20LM258(A),%20LM358(A),%20LM2904(Q).pdf"><span class="GramE">LM358</span></a><span class="GramE"> op amp.</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><a href="http://instruct1.cit.cornell.edu/courses/ee476/AtmelStuff/full32.pdf"><span class="GramE">ATMEGA32</span></a><span class="GramE"> microcontroller.</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><a href="http://instruct1.cit.cornell.edu/courses/ee476/labs/s2002/LCD-64.pdf"><span class="GramE">LCD</span></a><span class="GramE">.</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><a href="http://instruct1.cit.cornell.edu/courses/ee476/AtmelStuff/stk500.pdf"><span class="GramE">STK500</span></a><span class="GramE"> prototype board.</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><a href="http://rocky.digikey.com/WebLib/Fairchild/Web%20Data/1N_FDLL%20914,916%20A_B%204148_4448.pdf"><span class="GramE">1N914</span></a><span class="GramE"> diode.</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><i style="mso-bidi-font-style:normal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><b style="mso-bidi-font-weight:normal"><u><span style="font-size:12.0pt">Appendix
+D: Commented Code<o:p></o:p></span></u></b></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><i style="mso-bidi-font-style:normal"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//final project - Guitar tuner<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#include</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+&lt;Mega32.h&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#include</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+&lt;<span class="SpellE">math.h</span>&gt; <span style="color:green">// for sine<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#include</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+&lt;<span class="SpellE">stdio.h</span>&gt; <span style="color:green">// for <span class="SpellE">sprintf</span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#include</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+&lt;<span class="SpellE">string.h</span>&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#include</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+&lt;<span class="SpellE">stdlib.h</span>&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//I like these definitions<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#define</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+begin {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#define</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+end<span style="mso-spacerun:yes">�� </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//LCD stuff<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#define</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+<span class="SpellE">LCDwidth</span> 16<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">#<span class="SpellE">asm</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���� </span>.<span class="SpellE">equ</span> __<span class="SpellE">lcd_port</span> = 0x15;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">#<span class="SpellE">endasm</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#include</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+&lt;<span class="SpellE">lcd.h</span>&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span style="color:blue">char</span>
+<span class="SpellE">lcd_buffer</span>[17];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//set definitions<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#define</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+<span class="SpellE">infinit_T</span> 2000<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:blue">#define</span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">
+bias 110<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">/* <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><span style="mso-spacerun:yes">�� </span>Standard E tuning<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><span style="mso-spacerun:yes">������ </span><span class="GramE">frequency</span><span style="mso-spacerun:yes">����� </span>period<span style="mso-spacerun:yes">����
+</span>samples at 5kHz (0.2ms)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><span style="mso-spacerun:yes">�� </span>E = 82.4069<span style="mso-spacerun:yes">�� </span>s0<span style="mso-spacerun:yes">��
+</span>0.0121<span style="mso-spacerun:yes">���� </span>60.675<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><span style="mso-spacerun:yes">�� </span>A = <span class="GramE">110.0000<span style="mso-spacerun:yes">� </span>s1</span><span style="mso-spacerun:yes">��
+</span>0.0091<span style="mso-spacerun:yes">���� </span>45.45<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><span style="mso-spacerun:yes">�� </span>D = <span class="GramE">146.8324<span style="mso-spacerun:yes">� </span>s2</span><span style="mso-spacerun:yes">��
+</span>0.0068<span style="mso-spacerun:yes">���� </span>34.05<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><span style="mso-spacerun:yes">�� </span>G = <span class="GramE">195.9978<span style="mso-spacerun:yes">� </span>s3</span><span style="mso-spacerun:yes">��
+</span>0.0051<span style="mso-spacerun:yes">���� </span>25.5<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><span style="mso-spacerun:yes">�� </span>B = <span class="GramE">246.9417<span style="mso-spacerun:yes">� </span>s4</span><span style="mso-spacerun:yes">��
+</span>0.0040<span style="mso-spacerun:yes">���� </span>20.248<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><span style="mso-spacerun:yes">�� </span>e = <span class="GramE">329.6277<span style="mso-spacerun:yes">� </span>s5</span><span style="mso-spacerun:yes">��
+</span>0.0030<span style="mso-spacerun:yes">���� </span>15.169<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">*/<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">// Sampling <span class="SpellE">variabls</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span style="color:blue">char</span>
+<span class="SpellE">Sold,S</span>;<span style="mso-spacerun:yes">��������
+</span><span style="color:green">// hold past two samples<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">measured_T</span>;<span style="mso-spacerun:yes">����� </span><span style="color:green">// measured
+period<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">target_T</span>;<span style="mso-spacerun:yes">������� </span><span style="color:green">// target
+period<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span style="color:blue">char</span>
+<span class="SpellE">edgesSeen</span>=0;<span style="mso-tab-count:1">�� </span><span style="mso-spacerun:yes">� </span><span style="color:green">// number of <span class="SpellE">periouds</span> seen<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//variables to hold string frequency bounds<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">T_low</span>, <span class="SpellE">T_high</span>;<span style="mso-tab-count:3">���������� </span><span style="color:green">//largest bounds<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> T_low2, T_high2;<span style="mso-tab-count:
+2">�������� </span><span style="color:green">//medium bounds<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">low_bound</span>, <span class="SpellE">high_bound</span>; <span style="color:green">//small bounds<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//arrays to hold string specific values<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">T_array</span>[6];<span style="mso-spacerun:yes">����� </span><span style="color:green">// hold target
+periods for strings<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">low_array</span>[6];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">high_array</span>[6];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> low_array2[6];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> high_array2[6];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">tight_array</span>[6];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//state variables<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span style="color:blue">char</span>
+string;<span style="mso-tab-count:1">�� </span><span style="color:green">//string
+to be tuned<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">char</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> name[]="<span class="SpellE">EADGBe</span>";<span style="mso-tab-count:1">�� </span><span style="color:green">//display string
+name<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//variable for <span class="SpellE">arithmatic</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">i</span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">float</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> c1,c2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//variables for filter<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> <span class="SpellE">filter_array</span>[6];
+<span style="color:green">// hold filter settings<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> filter1;<span style="mso-spacerun:yes">�������� </span><span style="color:green">// alpha<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> filter2;<span style="mso-spacerun:yes">�������� </span><span style="color:green">// 1-alpha<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">// timer variables<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">unsigned</span></span><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE"><span style="color:blue">int</span></span> time1,time2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//tasks<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> sample(<span style="color:blue">void</span>);<span style="mso-spacerun:yes">������ </span><span style="color:green">//take an ADC
+sample and output result to <span class="SpellE">LEDs</span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE">buttonSM</span>(<span style="color:blue">void</span>);<span style="mso-spacerun:yes">� </span><span style="mso-spacerun:yes">���</span><span style="color:green">//set string to
+tune<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> initialize(<span style="color:blue">void</span>);<span style="mso-spacerun:yes">�� </span><span style="color:green">//all the usual <span class="SpellE">mcu</span> stuff<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE">set_string</span>(<span style="color:blue">void</span>);<span style="mso-tab-count:1">� </span><span style="color:green">//set parameters specific to string<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//**********************************************************<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//timer 0 <span class="GramE">compare</span> ISR<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">interrupt</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"> [TIM0_COMP] <span style="color:blue">void</span>
+timer0_compare(<span style="color:blue">void</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">begin</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">��� </span><span style="color:green">//Decrement timer
+variables<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">��� </span><span class="GramE"><span style="color:blue">if</span></span>
+(time1&gt;0)<span style="mso-tab-count:1">�� </span>--time1;<span style="mso-tab-count:1">� </span><span style="color:green">// sample()<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">��� </span><span class="GramE"><span style="color:blue">if</span></span>
+(time2&gt;0)<span style="mso-spacerun:yes">��� </span>--time2;<span style="mso-tab-count:1"> </span><span style="color:green">// <span class="SpellE">buttonSM</span>()<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">end</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//**********************************************************<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//Entry point and task scheduler loop<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> main(<span style="color:blue">void</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">begin</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">initialize(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE"><span style="color:blue">while</span>(</span>1)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">begin</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">if</span>(</span>time1 == 0) sample();<span style="mso-tab-count:1">��� </span><span style="color:green">//sample input and tune<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">if</span>(</span>time2 == 0) <span class="SpellE">buttonSM</span>();<span style="mso-tab-count:1">� </span><span style="color:green">//set string to tune<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">end</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">end</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//**********************************************************<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//sample - <span class="GramE">take</span> an ADC sample and output
+result to <span class="SpellE">LEDs</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> sample(<span style="color:blue">void</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">begin</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>time1 = 1;<span style="mso-tab-count:1"> </span><span style="color:green">//return in 200 us<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//sample from ADC<span style="mso-tab-count:1">��� </span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>Sold = S;<span style="mso-tab-count:1">� </span><span style="color:green">//<span class="SpellE">stor</span> old value<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>S = ADCH;<span style="mso-tab-count:1">� </span><span style="color:green">//sample<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>ADCSR.6 = 1; <span style="color:green">//take
+new sample with ADC<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//filter input
+signal<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>S= (<span style="color:blue">char</span><span class="GramE">)(</span>(filter1*(<span class="SpellE"><span style="color:blue">int</span></span>)Sold
++ filter2*(<span class="SpellE"><span style="color:blue">int</span></span>)S)&gt;&gt;4);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//Increment period
+if it is not maxed out<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE"><span style="color:blue">if</span></span>
+(<span class="SpellE">measured_T</span> &lt; <span class="SpellE">infinit_T</span>
+)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:1">���� </span><span style="mso-spacerun:yes">� </span><span class="SpellE"><span class="GramE">measured_T</span></span>++;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE"><span style="color:blue">else</span></span><span style="mso-spacerun:yes">��������������������� </span><span style="color:green">//otherwise<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span>PORTB = ~0b00000001;<span style="mso-spacerun:yes">�� </span><span style="color:green">//display ready
+led<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//Test for
+zero-crossing<span style="mso-tab-count:1">� </span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE"><span style="color:blue">if</span>(</span>Sold
+&lt; bias &amp;&amp; S &gt;= bias)<span style="mso-spacerun:yes">� </span><span style="color:green">//if trigger<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">begin</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="SpellE"><span class="GramE">edgesSeen</span></span>++;
+<span style="color:green">//increment number of edges seen<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span style="color:green">//make sure T
+is not <span class="SpellE">infinte</span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">if</span>(</span><span class="SpellE">measured_T</span> &lt; <span class="SpellE">infinit_T</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE">begin</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�������� </span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:2">��������� </span><span style="mso-spacerun:yes">�</span><span style="color:green">//after seeing 10
+complete <span class="SpellE">periouds</span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�������� </span><span class="GramE"><span style="color:blue">if</span>(</span><span class="SpellE">edgesSeen</span> == 10)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span style="mso-spacerun:yes">���</span><span class="GramE">begin</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����������� </span><span class="SpellE"><span class="GramE">edgesSeen</span></span> = 0; <span style="color:green">//reset
+number of edges seen<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����������� </span><span style="color:green">//<span class="SpellE">accempt</span> <span class="SpellE">measured_T</span> only if it is
+in right range<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����������� </span><span class="GramE"><span style="color:blue">if</span>(</span><span class="SpellE">measured_T</span> &lt; <span class="SpellE">T_high</span> &amp;&amp; <span class="SpellE">measured_T</span> &gt;
+<span class="SpellE">T_low</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����������� </span><span class="GramE">begin</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:3">������������� </span><span style="mso-spacerun:yes">��
+</span><span style="color:green">//set <span class="SpellE">LEDs</span> based on
+range of <span class="SpellE">measured_T</span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span style="mso-spacerun:yes">���������</span><span class="GramE"><span style="color:blue">if</span>(</span><span class="SpellE">measured_T</span> &gt;
+T_high2)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:3">������������� </span><span style="mso-spacerun:yes">����� </span>PORTB = ~0b00001000;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�������������� </span><span class="GramE"><span style="color:blue">if</span>(</span><span class="SpellE">measured_T</span> &gt; <span class="SpellE">high_bound</span> &amp;&amp; <span class="SpellE">measured_T</span>
+&lt;= T_high2)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:3">������������� </span><span style="mso-spacerun:yes">����� </span>PORTB = ~0b00010000;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�������������� </span><span class="GramE"><span style="color:blue">if</span>(</span><span class="SpellE">measured_T</span> &gt;= <span class="SpellE">low_bound</span> &amp;&amp; <span class="SpellE">measured_T</span>
+&lt;= <span class="SpellE">high_bound</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:4">������������������ </span><span style="mso-spacerun:yes">� </span>PORTB = ~0b00100000;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�������������� </span><span class="GramE"><span style="color:blue">if</span>(</span><span class="SpellE">measured_T</span> &gt;
+T_low2 &amp;&amp; <span class="SpellE">measured_T</span> &lt; <span class="SpellE">low_bound</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:4">������������������ </span><span style="mso-spacerun:yes">� </span>PORTB = ~0b01000000;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�������������� </span><span class="GramE"><span style="color:blue">if</span>(</span><span class="SpellE">measured_T</span> &lt;=
+T_low2)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:4">������������������ </span><span style="mso-spacerun:yes">� </span>PORTB = ~0b10000000;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����������� </span><span class="GramE">end</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����������� </span><span class="SpellE">measured_T</span>
+= 0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�������� </span><span class="GramE">end</span> <span style="color:green">// if 10th edge<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE">end</span> <span style="color:green">//if less than <span class="SpellE">infinit_T</span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:1">���� </span><span style="mso-spacerun:yes">�</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:1">���� </span><span style="mso-spacerun:yes">� </span><span class="GramE"><span style="color:blue">else</span></span> <span style="color:
+green">// if <span class="SpellE">measured_T</span> is infinite<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�������� </span><span class="SpellE">measured_T</span> =
+0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">end</span> <span style="color:green">//end trigger<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">end</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//**********************************************************<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE">buttonSM</span>(<span style="color:blue">void</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">begin</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>time2 = 150; <span style="color:green">//
+return to <span class="SpellE">buttonSM</span> in 30 ms<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//set each string
+based on which button is pressed<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE"><span style="color:blue">switch</span>(</span>~PIND)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">begin</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">case</span></span> 0x04: <span style="color:green">// button0<span style="mso-spacerun:yes">� </span>on PD2 - E<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE">string</span>
+= 0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE"><span style="color:blue">break</span></span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">case</span></span> 0x08: <span style="color:green">// button1<span style="mso-spacerun:yes">� </span>on PD2 - A<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE">string</span>
+= 1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE"><span style="color:blue">break</span></span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">case</span></span> 0x10: <span style="color:green">// button2<span style="mso-spacerun:yes">� </span>on PD2 - D<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE">string</span>
+= 2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE"><span style="color:blue">break</span></span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">case</span></span> 0x20: <span style="color:green">// button3<span style="mso-spacerun:yes">� </span>on PD2 - G<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE">string</span>
+= 3;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE"><span style="color:blue">break</span></span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">case</span></span> 0x40: <span style="color:green">// button4<span style="mso-spacerun:yes">� </span>on PD2 - B<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE">string</span>
+= 4;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE"><span style="color:blue">break</span></span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="GramE"><span style="color:
+blue">case</span></span> 0x80: <span style="color:green">// button5<span style="mso-spacerun:yes">� </span>on PD2 - e<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE">string</span>
+= 5;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">��� </span><span style="mso-spacerun:yes">�������������</span><span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������������� </span><span class="GramE"><span style="color:blue">break</span></span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">��� </span><span class="GramE">end</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">end</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//**********************************************************<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//<span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>) - set string dependent <span class="SpellE">variabls</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> <span class="SpellE">set_string</span>(<span style="color:blue">void</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">begin</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//display string
+name on LCD<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE"><span class="GramE">sprintf</span></span><span class="GramE">(</span><span class="SpellE">lcd_buffer,"%-c",name</span>[string]);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">lcd_<span class="GramE">gotoxy</span></span><span class="GramE">(</span>8, 0);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">lcd_<span class="GramE">puts</span></span><span class="GramE">(</span><span class="SpellE">lcd_buffer</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//set string
+bounds from arrays<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">target_T</span> = <span class="SpellE">T_<span class="GramE">array</span></span><span class="GramE">[</span>string];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>filter1 = <span class="SpellE">filter_<span class="GramE">array</span></span><span class="GramE">[</span>string];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>filter2 = 16-filter1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">T_low</span> = <span class="SpellE">low_<span class="GramE">array</span></span><span class="GramE">[</span>string];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">T_high</span> = <span class="SpellE">high_<span class="GramE">array</span></span><span class="GramE">[</span>string];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>T_low2 = low_<span class="GramE">array2[</span>string];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>T_high2 = high_<span class="GramE">array2[</span>string];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">high_bound</span> = <span class="SpellE">target_T</span> + <span class="SpellE">tight_<span class="GramE">array</span></span><span class="GramE">[</span>string];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">low_bound</span> = <span class="SpellE">target_T</span> - <span class="SpellE">tight_<span class="GramE">array</span></span><span class="GramE">[</span>string];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">end</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//**********************************************************<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green">//Set it all up<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;;color:blue">void</span></span><span style="font-size:
+12.0pt;font-family:&quot;Courier New&quot;"> initialize(<span style="color:blue">void</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span class="GramE"><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;">begin</span></span><span style="font-size:12.0pt;
+font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:1">���� </span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//set up ports<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>DDRA=0x00;<span style="mso-spacerun:yes">���
+</span><span style="color:green">// PORT A takes input from ADC<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>DDRC=0xff;<span style="mso-spacerun:yes">���
+</span><span style="color:green">// PORT C outputs to LCD<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>DDRD=0x00;<span style="mso-spacerun:yes">���
+</span><span style="color:green">// PORT D is an input from buttons<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>DDRB=0xff;<span style="mso-spacerun:yes">���
+</span><span style="color:green">// PORT B outputs to <span class="SpellE">LEDs</span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//turn <span class="SpellE">LEDs</span> off<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>PORTB=0xff;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//set up timer 0<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>TIMSK=2;<span style="mso-spacerun:yes">���
+</span><span style="color:green">//turn on timer 0 <span class="SpellE">cmp</span>
+match ISR<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>OCR0 = 50<span class="GramE">;<span style="mso-spacerun:yes">� </span><span style="color:green">/</span></span><span style="color:green">/set the compare to 250 time ticks<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//<span class="SpellE">prescalar</span> to 64 and turn on clear-on-match<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>TCCR0=0b00001011;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//init the task
+timer<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>time1 = time2 = 0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//LCD initialization<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">lcd_<span class="GramE">init</span></span><span class="GramE">(</span><span class="SpellE">LCDwidth</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">lcd_<span class="GramE">clear</span></span><span class="GramE">(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">lcd_<span class="GramE">gotoxy</span></span><span class="GramE">(</span>0,0);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">lcd_<span class="GramE">putsf</span></span><span class="GramE">(</span>"String:");<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//set up ADC<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>ADMUX = 0b00100000;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>ADCSR = 0b10000110;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>ADCSR.6 = 1; <span style="color:green">//
+start conversion<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;;
+color:green"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//initialize
+string values<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">T_<span class="GramE">array</span></span><span class="GramE">[</span>0] = 607-8-2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">T_<span class="GramE">array</span></span><span class="GramE">[</span>1] = 455-7-2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">T_<span class="GramE">array</span></span><span class="GramE">[</span>2] = 341-7-1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">T_<span class="GramE">array</span></span><span class="GramE">[</span>3] = 255-3-2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">T_<span class="GramE">array</span></span><span class="GramE">[</span>4] = 202-4+1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">T_<span class="GramE">array</span></span><span class="GramE">[</span>5] = 152-3;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//initialize tight
+<span class="SpellE">strig</span> bounds<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">tight_<span class="GramE">array</span></span><span class="GramE">[</span>0] = 2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">tight_<span class="GramE">array</span></span><span class="GramE">[</span>1] = 2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">tight_<span class="GramE">array</span></span><span class="GramE">[</span>2] = 1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">tight_<span class="GramE">array</span></span><span class="GramE">[</span>3] = 1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">tight_<span class="GramE">array</span></span><span class="GramE">[</span>4] = 0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">tight_<span class="GramE">array</span></span><span class="GramE">[</span>5] = 0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//initialize
+string bounds<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>c1 = 1.05;<span style="mso-tab-count:1"> </span><span style="color:green">//1.0293;<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>c2 = 1/c1;<span style="mso-tab-count:1"> </span><span style="color:green">//0.9715;<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE"><span style="color:blue">for</span>(</span><span class="SpellE">i</span>=0;i&lt;6;i++)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">begin</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="SpellE">high_array</span>[<span class="SpellE">i</span>] = (<span style="color:blue">unsigned</span> <span class="SpellE"><span style="color:blue">int</span></span><span class="GramE">)(</span>c1*((<span style="color:blue">float</span>)<span class="SpellE">T_array</span>[<span class="SpellE">i</span>]));<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span><span class="SpellE">low_array</span>[<span class="SpellE">i</span>] = (<span style="color:blue">unsigned</span> <span class="SpellE"><span style="color:blue">int</span></span><span class="GramE">)(</span>c2*((<span style="color:blue">float</span>)<span class="SpellE">T_array</span>[<span class="SpellE">i</span>]));<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span>high_<span class="GramE">array2[</span><span class="SpellE">i</span>] = <span class="SpellE">T_array</span>[<span class="SpellE">i</span>]
++ (<span class="SpellE">tight_array</span>[<span class="SpellE">i</span>]+3);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">����� </span>low_<span class="GramE">array2[</span><span class="SpellE">i</span>] = <span class="SpellE">T_array</span>[<span class="SpellE">i</span>]
+- (<span class="SpellE">tight_array</span>[<span class="SpellE">i</span>]+3);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">end</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//initialize
+filters<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">filter_<span class="GramE">array</span></span><span class="GramE">[</span>0] = 15;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">filter_<span class="GramE">array</span></span><span class="GramE">[</span>1] = 15;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">filter_<span class="GramE">array</span></span><span class="GramE">[</span>2] = 12;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">filter_<span class="GramE">array</span></span><span class="GramE">[</span>3] = 12;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">filter_<span class="GramE">array</span></span><span class="GramE">[</span>4] = 4;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">filter_<span class="GramE">array</span></span><span class="GramE">[</span>5] = 4;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//set initial
+string to E<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="GramE">string</span> = 0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span class="SpellE">set_<span class="GramE">string</span></span><span class="GramE">(</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span><span style="color:green">//crank up the <span class="SpellE">ISRs</span><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>#<span class="SpellE">asm</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">���������� </span><span class="SpellE"><span class="GramE">sei</span></span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-layout-grid-align:none"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">�� </span>#<span class="SpellE">endasm</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span class="GramE"><span style="font-size:12.0pt;font-family:&quot;Courier New&quot;">end</span></span><span style="font-size:12.0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+</div>
+
+
+
+
+</o:smarttagtype></o:smarttagtype></body></html>

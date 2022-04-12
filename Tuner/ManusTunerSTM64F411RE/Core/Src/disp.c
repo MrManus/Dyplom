@@ -165,7 +165,7 @@ void disp_set_similarity_level(int8_t similarity_level)
 
 	if(similarity_level >= 0)
 	{
-		if((similarity_level >= 10) && (similarity_level <= 30))
+		if((similarity_level >= 4) && (similarity_level <= 30))
 		{
 			disp_or_tables(disp_pixel, plus1_bitmap);
 		}
@@ -188,7 +188,7 @@ void disp_set_similarity_level(int8_t similarity_level)
 	}
 	else
 	{
-		if((similarity_level <= -10) && (similarity_level >= -30))
+		if((similarity_level <= -4) && (similarity_level >= -30))
 		{
 			disp_or_tables(disp_pixel, minus1_bitmap);
 		}
